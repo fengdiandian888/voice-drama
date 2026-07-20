@@ -251,7 +251,8 @@ def enrich_video(v):
     return {
         "id": v["id"],
         "title": v.get("title", ""),
-        "title_zh": "",  # 自动层不臆造翻译，留空由 render 回退英文原标题
+        # 保留已有 title_zh（如批量手译结果），不臆造也不清空；仅当确实为空才留空
+        "title_zh": v.get("title_zh", "") or "",
         "duration": v.get("duration", ""),
         "link": v.get("link", ""),
         "lines": lines,
@@ -289,6 +290,17 @@ def main():
             if not rec["speaker_confident"]:
                 low_conf.append(rec["id"])
         opath = os.path.join(ENRICHED, f"chunk_{n:03d}.json")
+        # 回灌已有 title_zh（如批量手译结果），避免重跑自动层时被清空
+        if os.path.exists(opath):
+            try:
+                old = json.load(open(opath, encoding="utf-8"))
+                old_vids = old["videos"] if isinstance(old, dict) else old
+                zh_map = {o.get("id"): o.get("title_zh", "") for o in old_vids}
+                for rec in out:
+                    if not rec.get("title_zh") and zh_map.get(rec["id"]):
+                        rec["title_zh"] = zh_map[rec["id"]]
+            except Exception as e:
+                print(f"  [warn] 读取旧 {opath} 失败: {e}")
         with open(opath, "w", encoding="utf-8") as fh:
             json.dump(out, fh, ensure_ascii=False, indent=2)
         done += len(out)

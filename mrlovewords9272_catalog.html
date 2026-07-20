@@ -229,8 +229,7 @@ const AUTO = DATA.filter(r=>r.enriched && r.tier==="auto").length;
 
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 // 去掉频道前缀【Lの女性向音声】（数据中常见残形 "Lの女性向音声】"）
-function cleanTitle(s){return (s||"").replace(/^【?(?:Lの|ASMR)[^】
-]*】?\s*/, "");}
+function cleanTitle(s){return (s||"").replace(/^【?(?:Lの|ASMR)[^】]*】?\s*/, "");}
 
 document.getElementById("p1v").textContent = ENRICHED + " / " + DONE + " 篇（" + Math.round(ENRICHED/DONE*100) + "%）· 精校 " + HAND + " · 自动 " + AUTO;
 document.getElementById("p1b").style.width = (ENRICHED/DONE*100) + "%";

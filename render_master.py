@@ -312,7 +312,7 @@ const AUTO = DATA.filter(r=>r.enriched && r.tier==="auto").length;
 
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 // 去掉频道前缀【Lの女性向音声】（数据中常见残形 "Lの女性向音声】"）
-function cleanTitle(s){return (s||"").replace(/^【?(?:Lの|ASMR)[^】\n]*】?\s*/, "");}
+function cleanTitle(s){return (s||"").replace(/^【?(?:Lの|ASMR)[^】]*】?\\s*/, "");}
 
 document.getElementById("p1v").textContent = ENRICHED + " / " + DONE + " 篇（" + Math.round(ENRICHED/DONE*100) + "%）· 精校 " + HAND + " · 自动 " + AUTO;
 document.getElementById("p1b").style.width = (ENRICHED/DONE*100) + "%";
@@ -669,12 +669,20 @@ for i, p in enumerate(parts, 1):
         _f.write("window.__CAT__=window.__CAT__||[];window.__CAT__.push(" +
                  json.dumps(p, ensure_ascii=False).replace("</", "<\\/") + ");")
     part_files.append(fn)
-scripts = "".join(f'<script src="catalog_data/{fn}"></script>' for fn in part_files)
+INLINE = os.environ.get("INLINE") == "1"
+if INLINE:
+    # 单文件内联版：把 20 个分块数据塞进一个 <script>，去掉 20 次子请求，
+    # 用于部署到国内可访问的托管（github.io 在大陆常拉不全分块导致空白）。
+    data_js = "\n".join(open(_os.path.join(_datadir, fn), encoding="utf-8").read() for fn in part_files)
+    scripts = '<script>\n' + data_js + '\n</script>'
+    out = os.path.join(BASE, "mrlovewords9272_catalog_standalone.html")
+else:
+    scripts = "".join(f'<script src="catalog_data/{fn}"></script>' for fn in part_files)
+    out = os.path.join(BASE, "mrlovewords9272_catalog.html")
 HTML = HTML.replace("__DATASCRIPTS__", scripts)
 HTML = HTML.replace("__DATA__", "")
 HTML = HTML.replace("__TOTAL_CHANNEL__", str(TOTAL_CHANNEL))
 
-out = os.path.join(BASE, "mrlovewords9272_catalog.html")
 with open(out, "w", encoding="utf-8") as f:
     f.write(HTML)
 

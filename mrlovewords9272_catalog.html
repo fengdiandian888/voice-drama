@@ -131,6 +131,15 @@
   .tag{display:inline-block;background:var(--tag);color:var(--accent);border-radius:6px;font-size:11px;padding:1px 7px;margin:2px 3px 0 0}
   .sensitive{color:#dc2626;font-weight:700}
   .hint{font-size:12px;color:var(--sub);margin-top:4px}
+  /* ── 数据总览面板（题材/角色/强度，可点击筛选）── */
+  .dashcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1280px;margin:0 auto}
+  .dashh{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px;letter-spacing:.04em}
+  .dashtags{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start}
+  .dtag,.dspk{cursor:pointer;border:1px solid #e2e8f0;background:#fff;color:#475569;border-radius:999px;padding:3px 10px;font-size:12px;line-height:1.5}
+  .dtag b,.dspk b{color:#0f172a}
+  .dtag:hover,.dspk:hover{border-color:#2563eb;color:#2563eb}
+  .dtag.on,.dspk.on{background:#2563eb;color:#fff;border-color:#2563eb}
+  .dtag.on b,.dspk.on b{color:#fff}
   @media(max-width:780px){nav.toc{display:none}.layout{padding:0}}
   /* 纠错弹窗 */
   #ovModal{position:fixed;inset:0;background:rgba(15,23,42,.4);display:none;align-items:center;justify-content:center;z-index:300}
@@ -190,8 +199,18 @@
     </span>
     <button class="editbtn" id="editBtn">✎ 编辑台词</button>
     <button class="resetbtn" id="ovReset">清空纠错</button>
+    <button class="editbtn" id="dashBtn">数据总览</button>
   </div>
 </header>
+<div id="dash" style="display:none;background:var(--panel);border-bottom:1px solid var(--line);padding:14px 20px">
+  <div class="dashcols">
+    <div><div class="dashh">题材标签（点击筛选）</div><div id="dashGenres" class="dashtags"></div></div>
+    <div><div class="dashh">角色榜（点击筛选）</div><div id="dashSpeakers" class="dashtags"></div></div>
+    <div><div class="dashh">强度分布（点击筛选）</div><div id="dashIntensity" class="dashtags"></div>
+      <div id="dashHier" style="margin-top:10px;font-size:12px;color:#64748b"></div></div>
+  </div>
+  <div style="margin-top:10px"><button class="resetbtn" id="dashClear">清除总览筛选</button></div>
+</div>
 <div class="layout">
   <nav class="toc" id="toc"></nav>
   <main id="main"></main>
@@ -381,6 +400,7 @@ function cardHTML(r, kw){
     '<div class="meta">时长 '+esc(r.duration)+' · <a href="'+esc(r.link)+'" target="_blank" rel="noopener">YouTube 原片 ↗</a></div>'+
     '<div class="sec"><div class="t">场景</div>'+scene+'</div>'+
     metaHTML(r, kw)+
+    charPanelHTML(r, kw)+
     '<div class="sec"><div class="t">行为</div><ul class="beh">'+behHTML+'</ul></div>'+
     '<div class="sec"><div class="t">台词</div><div class="transcript view-'+LINE_VIEW+'">'+lineHTML2+'</div></div>'+
     enhHint+
@@ -433,7 +453,7 @@ function kwHit(r, kws){
     low(r.tone_summary).indexOf(k)>=0 || (r.genre_tags||[]).some(t=>low(t).indexOf(k)>=0) || low(r.listener_role).indexOf(k)>=0 || (r.signature_elements||[]).some(t=>low(t).indexOf(k)>=0)
   );
 }
-const FILTER = { hier:null, tone:null, genre:null, sensitive:null };
+const FILTER = { hier:null, tone:null, genre:null, sensitive:null, speaker:null, intensity:null };
 function filterHit(r){
   if(FILTER.hier){
     const sp = (r.lines&&r.lines[0]) ? r.lines[0].speaker : "";
@@ -447,6 +467,8 @@ function filterHit(r){
   }
   if(FILTER.sensitive==="y" && !r.sensitive) return false;
   if(FILTER.sensitive==="n" && r.sensitive) return false;
+  if(FILTER.speaker){ if(!(r.lines||[]).some((l,i)=> spkKey(r,i)===FILTER.speaker)) return false; }
+  if(FILTER.intensity){ if(r.intensity!==FILTER.intensity) return false; }
   return true;
 }
 function search(kw){
@@ -462,7 +484,9 @@ const FILTER_DEFS = [
 ];
 function renderFilters(){
   const box = document.getElementById("filters");
-  box.innerHTML = FILTER_DEFS.map(f =>
+  const defs = FILTER_DEFS.map(f => (f.dim==="genre" && typeof TOP_GENRES!=="undefined" && TOP_GENRES.length)
+    ? Object.assign({}, f, {opts: TOP_GENRES.slice(0,10).map(([t])=>[t,t])}) : f);
+  box.innerHTML = defs.map(f =>
     '<span class="fgrp"><b>'+f.label+'：</b>'+
     '<span class="chip on" data-dim="'+f.dim+'" data-val="">全部</span>'+
     f.opts.map(o=>'<span class="chip" data-dim="'+f.dim+'" data-val="'+o[0]+'">'+o[1]+'</span>').join("")+
@@ -480,6 +504,70 @@ function renderFilters(){
     });
   });
 }
+/* ===== 全局聚合：题材 / 角色 / 强度 / 身份 ===== */
+function spkKey(r, li){ const ov=getOV(r.id,li); return (ov&&ov.speaker!==undefined)?ov.speaker:(r.lines[li].speaker||""); }
+function spkHier(r, li){ const ov=getOV(r.id,li); const s=(ov&&ov.speaker!==undefined)?ov.speaker:(r.lines[li].speaker||""); return (ov&&ov.hier)?ov.hier:hierOf(s); }
+function pieceSpeakers(r){
+  const m={};
+  (r.lines||[]).forEach((l,i)=>{
+    const s=spkKey(r,i); if(!s) return;
+    const h=spkHier(r,i);
+    if(!m[s]) m[s]={name:s,hier:h,count:0};
+    m[s].count++;
+  });
+  return Object.values(m).sort((a,b)=>b.count-a.count);
+}
+function charPanelHTML(r, kw){
+  if(!r.enriched) return '';
+  const sps=pieceSpeakers(r); if(!sps.length) return '';
+  const max=sps[0].count;
+  const rows=sps.map(s=>{
+    const color=s.hier==="sup"?"#2563eb":s.hier==="sub"?"#db2777":s.hier==="other"?"#4b5563":"#9ca3af";
+    const w=Math.max(6,Math.round(s.count/max*100));
+    return '<div style="display:flex;align-items:center;gap:8px;margin:5px 0;font-size:12.5px">'+
+      '<span style="flex:0 0 92px;color:'+color+';font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+hl(s.name,kw)+'</span>'+
+      '<span style="flex:1;height:8px;background:#eef2f7;border-radius:5px;overflow:hidden"><i style="display:block;height:100%;width:'+w+'%;background:'+color+'"></i></span>'+
+      '<span style="flex:0 0 26px;text-align:right;color:#64748b">'+s.count+'</span></div>';
+  }).join('');
+  const supN=sps.filter(s=>s.hier==="sup").length, subN=sps.filter(s=>s.hier==="sub").length;
+  const pat=(supN||subN)?'<span style="font-size:11px;color:#64748b;margin-left:8px">格局：'+supN+' 上位 · '+subN+' 下位</span>':'';
+  return '<div class="sec"><div class="t">角色关系'+pat+'</div>'+rows+'</div>';
+}
+
+const GENRE_COUNT={}, SPEAKER_COUNT={}, INTENSITY_COUNT={};
+const HIER_TOTAL={sup:0,sub:0,other:0,unknown:0};
+DATA.forEach(r=>{
+  (r.genre_tags||[]).forEach(t=>{ GENRE_COUNT[t]=(GENRE_COUNT[t]||0)+1; });
+  if(r.intensity) INTENSITY_COUNT[r.intensity]=(INTENSITY_COUNT[r.intensity]||0)+1;
+  (r.lines||[]).forEach((l,i)=>{ const s=spkKey(r,i); if(s){ SPEAKER_COUNT[s]=(SPEAKER_COUNT[s]||0)+1; HIER_TOTAL[spkHier(r,i)]++; } });
+});
+const TOP_GENRES=Object.entries(GENRE_COUNT).sort((a,b)=>b[1]-a[1]);
+const TOP_SPEAKERS=Object.entries(SPEAKER_COUNT).sort((a,b)=>b[1]-a[1]).slice(0,30);
+
+function renderDash(){
+  const total=DONE;
+  const gHtml=TOP_GENRES.slice(0,24).map(([t,c])=>{
+    const fs=11+Math.min(5,Math.round(c/total*40));
+    return '<button class="dtag" data-kind="genre" data-val="'+esc(t)+'" style="font-size:'+fs+'px">'+esc(t)+' <b>'+c+'</b></button>';
+  }).join('');
+  const sHtml=TOP_SPEAKERS.map(([s,c])=>{
+    const h=HIER[s]?(HIER[s]==="sup"?"sup":HIER[s]==="sub"?"sub":"other"):"other";
+    const color=h==="sup"?"#2563eb":h==="sub"?"#db2777":"#4b5563";
+    return '<button class="dspk" data-kind="speaker" data-val="'+esc(s)+'"><span style="color:'+color+'">●</span> '+esc(s)+' <b>'+c+'</b></button>';
+  }).join('');
+  const iHtml=Object.keys(INTENSITY_COUNT).sort().map(k=>{
+    const c=INTENSITY_COUNT[k];
+    const color=k.indexOf("高")>=0?"#dc2626":k.indexOf("中")>=0?"#ea580c":"#0d9488";
+    return '<button class="dtag" data-kind="intensity" data-val="'+esc(k)+'" style="border-color:'+color+';color:'+color+'">'+esc(k)+' <b>'+c+'</b></button>';
+  }).join('');
+  const hT=HIER_TOTAL;
+  document.getElementById("dashGenres").innerHTML=gHtml||'<span class="empty">（无）</span>';
+  document.getElementById("dashSpeakers").innerHTML=sHtml||'<span class="empty">（无）</span>';
+  document.getElementById("dashIntensity").innerHTML=iHtml||'<span class="empty">（无）</span>';
+  document.getElementById("dashHier").innerHTML='全库身份格局：上位 <b style="color:#2563eb">'+hT.sup+'</b> · 下位 <b style="color:#db2777">'+hT.sub+'</b> · 其他 <b style="color:#4b5563">'+hT.other+'</b> · 未识别 '+hT.unknown;
+}
+renderDash();
+
 render(DATA, "");
 renderFilters();
 // 初始化台词视图按钮高亮（render 已用当前 LINE_VIEW 渲染）
@@ -489,6 +577,28 @@ document.getElementById("viewBtns").addEventListener("click", e=>{
   setLineView(b.dataset.view);
 });
 document.getElementById("search").addEventListener("input", e=>search(e.target.value));
+
+/* ===== 数据总览面板交互 ===== */
+document.getElementById("dashBtn").addEventListener("click",()=>{
+  const d=document.getElementById("dash");
+  d.style.display = (d.style.display==="none"||!d.style.display)?"block":"none";
+});
+document.getElementById("dash").addEventListener("click",e=>{
+  const b=e.target.closest("[data-kind]"); if(!b) return;
+  const kind=b.dataset.kind, val=b.dataset.val;
+  FILTER[kind] = (FILTER[kind]===val)?null:val;
+  document.querySelectorAll('#dash [data-kind="'+kind+'"]').forEach(x=>x.classList.toggle("on", x.dataset.val===FILTER[kind]));
+  if(kind==="genre"){
+    document.querySelectorAll('#filters .chip[data-dim="genre"]').forEach(c=>c.classList.toggle("on", c.dataset.val===FILTER.genre));
+  }
+  search(document.getElementById("search").value);
+});
+document.getElementById("dashClear").addEventListener("click",()=>{
+  FILTER.speaker=null; FILTER.intensity=null; FILTER.genre=null;
+  document.querySelectorAll('#dash [data-kind]').forEach(x=>x.classList.remove("on"));
+  document.querySelectorAll('#filters .chip[data-dim="genre"]').forEach(c=>c.classList.toggle("on", c.dataset.val===""));
+  search(document.getElementById("search").value);
+});
 
 document.getElementById("toc").addEventListener("click", e=>{
   const a = e.target.closest("a"); if(!a) return;

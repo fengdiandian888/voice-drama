@@ -155,6 +155,12 @@
   #ovModal button{cursor:pointer;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600}
   #ovModal .save{background:var(--accent);color:#fff}
   #ovModal .cancel{background:#e5e7eb;color:#374151}
+  .grp{margin:18px 0 8px;padding:6px 12px;background:linear-gradient(90deg,#eff6ff,#f5f3ff);border-left:4px solid var(--accent);border-radius:8px;font-weight:700;font-size:14px;color:#1e3a8a;display:flex;align-items:center;gap:8px}
+  .grp-c{font-size:11px;font-weight:600;color:#64748b;background:#fff;border:1px solid #dbeafe;border-radius:10px;padding:1px 8px}
+  .sortbtns{margin-left:6px}
+  .sortbtns b{margin-right:4px}
+  .sortbtns button{font-size:12px;padding:3px 10px;border:1px solid var(--line);background:#fff;border-radius:14px;cursor:pointer;color:#475569}
+  .sortbtns button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 </style>
 </head>
 <body>
@@ -196,6 +202,13 @@
       <button data-view="script" class="on">剧本</button>
       <button data-view="bubble">气泡</button>
       <button data-view="plain">纯文本</button>
+    </span>
+    <span class="sortbtns" id="sortBtns">
+      <b>排序：</b>
+      <button data-sort="genre" class="on">题材分组</button>
+      <button data-sort="orig">原序</button>
+      <button data-sort="dur">时长↑</button>
+      <button data-sort="intensity">强度↓</button>
     </span>
     <button class="editbtn" id="editBtn">✎ 编辑台词</button>
     <button class="resetbtn" id="ovReset">清空纠错</button>
@@ -245,6 +258,28 @@ const DONE = DATA.length;
 const ENRICHED = DATA.filter(r=>r.enriched).length;
 const HAND = DATA.filter(r=>r.enriched && r.tier!=="auto").length;
 const AUTO = DATA.filter(r=>r.enriched && r.tier==="auto").length;
+
+/* ===== 排序：题材分组 / 原序 / 时长 / 强度 ===== */
+let SORT_MODE = "genre";
+function groupKey(r){ return ((r.genre_tags&&r.genre_tags[0])||"未分类"); }
+function parseDur(d){
+  d=(d||"").toString().trim();
+  if(d.indexOf(":")>0){ const p=d.split(":"); let s=0; for(const x of p){ s=s*60+parseInt(x||"0",10); } return s; }
+  let total=0; const fi=d.indexOf("分"); if(fi>0){ const n=parseInt(d.slice(0,fi),10); if(!isNaN(n)) total+=n*60; }
+  const si=d.indexOf("秒"); if(si>0){ const n=parseInt(d.slice(fi+1,si),10); if(!isNaN(n)) total+=n; }
+  return total;
+}
+function applySort(list){
+  const arr = list.slice();
+  if(SORT_MODE==="dur"){ arr.sort((a,b)=>parseDur(a.duration)-parseDur(b.duration)); return arr; }
+  if(SORT_MODE==="intensity"){ const o={"高":0,"中":1,"低":2}; arr.sort((a,b)=>(o[a.intensity]??9)-(o[b.intensity]??9)); return arr; }
+  if(SORT_MODE==="genre"){
+    const freq={}; DATA.forEach(r=>{ const k=groupKey(r); freq[k]=(freq[k]||0)+1; });
+    arr.sort((a,b)=>{ const ka=groupKey(a),kb=groupKey(b); if(ka!==kb) return (freq[kb]||0)-(freq[ka]||0); return (a.no||0)-(b.no||0); });
+    return arr;
+  }
+  arr.sort((a,b)=>(a.no||0)-(b.no||0)); return arr;
+}
 
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 // 去掉频道前缀【Lの女性向音声】（数据中常见残形 "Lの女性向音声】"）
@@ -407,8 +442,15 @@ function cardHTML(r, kw){
 }
 
 function render(list, kw){
+  list = applySort(list);
   CUR_LIST = list; CUR_KW = kw;
-  document.getElementById("main").innerHTML = list.map(r=>cardHTML(r,kw)).join("");
+  let html="", curG=null, counts={};
+  if(SORT_MODE==="genre"){ list.forEach(r=>{ const g=groupKey(r); counts[g]=(counts[g]||0)+1; }); }
+  list.forEach(r=>{
+    if(SORT_MODE==="genre"){ const g=groupKey(r); if(g!==curG){ curG=g; html+='<div class="grp">'+esc(g)+' <span class="grp-c">'+counts[g]+'</span></div>'; } }
+    html += cardHTML(r, kw);
+  });
+  document.getElementById("main").innerHTML = html;
   document.getElementById("toc").innerHTML = list.map(r =>
     '<a href="#v'+r.id+'" data-id="'+r.id+'">'+String(r.no).padStart(3,"0")+'. '+esc(cleanTitle(r.title_zh||r.title))+'</a>').join("");
 }
@@ -548,6 +590,12 @@ document.querySelectorAll("#viewBtns button[data-view]").forEach(b=>b.classList.
 document.getElementById("viewBtns").addEventListener("click", e=>{
   const b = e.target.closest("button[data-view]"); if(!b) return;
   setLineView(b.dataset.view);
+});
+document.getElementById("sortBtns").addEventListener("click", e=>{
+  const b = e.target.closest("button[data-sort]"); if(!b) return;
+  SORT_MODE = b.dataset.sort;
+  document.querySelectorAll("#sortBtns button[data-sort]").forEach(x=>x.classList.toggle("on", x.dataset.sort===SORT_MODE));
+  search(document.getElementById("search").value);
 });
 document.getElementById("search").addEventListener("input", e=>search(e.target.value));
 

@@ -1,0 +1,521 @@
+[
+  {
+    "id": "6wTbbRw13rY",
+    "title": "【Lの短视频】《爱与责罚主题》情景剧",
+    "title_zh": "",
+    "duration": "00:00:18",
+    "link": "https://www.youtube.com/watch?v=6wTbbRw13rY",
+    "lines": [
+      {
+        "ts": "00:00:01",
+        "text": "过来",
+        "speaker": "他",
+        "tone": "命令",
+        "sound": []
+      },
+      {
+        "ts": "00:00:01",
+        "text": "我说过来",
+        "speaker": "他",
+        "tone": "命令",
+        "sound": []
+      },
+      {
+        "ts": "00:00:10",
+        "text": "今天怎么这么不听话",
+        "speaker": "他",
+        "tone": "命令",
+        "sound": []
+      },
+      {
+        "ts": "00:00:10",
+        "text": "很喜欢试探我的底线是吧",
+        "speaker": "他",
+        "tone": "宠溺",
+        "sound": []
+      },
+      {
+        "ts": "00:00:10",
+        "text": "一句话不想重复第三别",
+        "speaker": "他",
+        "tone": "命令",
+        "sound": []
+      },
+      {
+        "ts": "00:00:10",
+        "text": "你自己看着吧",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      }
+    ],
+    "scene": "短视频情景剧，一方斥责对方不听话、试探底线，要求自行承担后果。含管娇语气。",
+    "behaviors": [
+      {
+        "desc": "命令对方过来"
+      },
+      {
+        "desc": "斥责不听话、试探底线，要求自行承担"
+      }
+    ],
+    "tone_summary": "（自动）他视角独白，语气以命令、宠溺、平静为主，题材偏现代情侣。",
+    "genre_tags": [
+      "现代情侣"
+    ],
+    "emotion_arc": "（自动）命令",
+    "intensity": "中偏高",
+    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+    "signature_elements": [],
+    "sensitive": false,
+    "tier": "auto",
+    "speaker_confident": false
+  },
+  {
+    "id": "Gxtj2Ux6bMg",
+    "title": "【Lの短视频】《爱与责罚主题》情景剧",
+    "title_zh": "",
+    "duration": "00:00:30",
+    "link": "https://www.youtube.com/watch?v=Gxtj2Ux6bMg",
+    "lines": [
+      {
+        "ts": "00:00:00",
+        "text": "说了多少次",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "怎么就是记不住",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "站好了",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "是我说话不好使了",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "是吧",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "转过去",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "别要嘴承了",
+        "speaker": "他",
+        "tone": "命令",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "可以哭出来",
+        "speaker": "他",
+        "tone": "温柔",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "记住",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "你没有咬他的权力",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "好了好了",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "我的错",
+        "speaker": "他",
+        "tone": "宠溺",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "我的错",
+        "speaker": "他",
+        "tone": "宠溺",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "以后不这样了",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "不说这个狼狼",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "怪了",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "不哭了",
+        "speaker": "他",
+        "tone": "温柔",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "不哭了",
+        "speaker": "他",
+        "tone": "温柔",
+        "sound": []
+      },
+      {
+        "ts": "00:00:13",
+        "text": "不哭了吧",
+        "speaker": "他",
+        "tone": "温柔",
+        "sound": []
+      }
+    ],
+    "scene": "短视频情景剧，一方责怪对方屡娇不改、令其站好转身，随后安抚认错。含轻度管娇与安抚。",
+    "behaviors": [
+      {
+        "desc": "责怪对方记不住、令其站好转身"
+      },
+      {
+        "desc": "允许其哭出声并认错，随后安抚不哭"
+      }
+    ],
+    "tone_summary": "（自动）他视角独白，语气以平静、温柔、宠溺为主，题材偏现代情侣。",
+    "genre_tags": [
+      "现代情侣"
+    ],
+    "emotion_arc": "（自动）平静",
+    "intensity": "中",
+    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+    "signature_elements": [],
+    "sensitive": false,
+    "tier": "auto",
+    "speaker_confident": false
+  },
+  {
+    "id": "PjoA7bC7yyc",
+    "title": "【Lの短视频】《爱与责罚主题》情景剧",
+    "title_zh": "",
+    "duration": "00:00:32",
+    "link": "https://www.youtube.com/watch?v=PjoA7bC7yyc",
+    "lines": [
+      {
+        "ts": "00:00:00",
+        "text": "如果这是我远你生气了",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "我怎么都会哄你",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "但这次是原则问题",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "埃及菊骂就给我哭哭几节了",
+        "speaker": "他",
+        "tone": "命令",
+        "sound": []
+      },
+      {
+        "ts": "00:00:15",
+        "text": "还哭",
+        "speaker": "他",
+        "tone": "温柔",
+        "sound": []
+      },
+      {
+        "ts": "00:00:15",
+        "text": "给我别回去",
+        "speaker": "他",
+        "tone": "命令",
+        "sound": []
+      },
+      {
+        "ts": "00:00:15",
+        "text": "再哭要开始罚了",
+        "speaker": "他",
+        "tone": "温柔",
+        "sound": []
+      },
+      {
+        "ts": "00:00:25",
+        "text": "还哭是吧",
+        "speaker": "他",
+        "tone": "温柔",
+        "sound": []
+      },
+      {
+        "ts": "00:00:25",
+        "text": "过来",
+        "speaker": "他",
+        "tone": "命令",
+        "sound": []
+      },
+      {
+        "ts": "00:00:25",
+        "text": "抱抱就不哭了",
+        "speaker": "他",
+        "tone": "撒娇",
+        "sound": []
+      }
+    ],
+    "scene": "短视频情景剧，一方表示虽愿哄人但此次为原则问题，要对方停止哭泣否则开罚，最后安抚。含轻度管娇与安抚。",
+    "behaviors": [
+      {
+        "desc": "表明此次为原则问题，要对方停止哭泣"
+      },
+      {
+        "desc": "警告再哭将开始罚"
+      },
+      {
+        "desc": "安抚对方，使其停止哭泣"
+      }
+    ],
+    "tone_summary": "（自动）他视角独白，语气以平静、命令、温柔为主，题材偏治愈。",
+    "genre_tags": [
+      "治愈"
+    ],
+    "emotion_arc": "（自动）平静→命令→温柔",
+    "intensity": "中偏高",
+    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+    "signature_elements": [],
+    "sensitive": false,
+    "tier": "auto",
+    "speaker_confident": false
+  },
+  {
+    "id": "ZRax5_nSMMY",
+    "title": "【Lの短视频】《爱与责罚主题》情景剧",
+    "title_zh": "",
+    "duration": "00:00:25",
+    "link": "https://www.youtube.com/watch?v=ZRax5_nSMMY",
+    "lines": [
+      {
+        "ts": "00:00:00",
+        "text": "欧",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "这时候堵气呢",
+        "speaker": "他",
+        "tone": "询问",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "不是说话是吧",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "好",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "好的",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:21",
+        "text": "让我看看到底是",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:21",
+        "text": "你的嘴硬",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:21",
+        "text": "还是我手上扯东西硬",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      }
+    ],
+    "scene": "短视频情景剧，一方指出对方赌气不语，欲以行动让其服软。含管娇/对峙语气。",
+    "behaviors": [
+      {
+        "desc": "点破对方赌气沉默"
+      },
+      {
+        "desc": "以行动试探对方是否服软"
+      }
+    ],
+    "tone_summary": "（自动）他视角独白，语气以平静、询问为主，题材偏现代情侣。",
+    "genre_tags": [
+      "现代情侣"
+    ],
+    "emotion_arc": "（自动）平静",
+    "intensity": "中",
+    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+    "signature_elements": [],
+    "sensitive": false,
+    "tier": "auto",
+    "speaker_confident": false
+  },
+  {
+    "id": "Y0Nfhu1-zak",
+    "title": "【Lの短视频】《离家出走的惩罚》情景剧",
+    "title_zh": "",
+    "duration": "00:00:36",
+    "link": "https://www.youtube.com/watch?v=Y0Nfhu1-zak",
+    "lines": [
+      {
+        "ts": "00:00:00",
+        "text": "我心钟情",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "Relax",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "太梦情了",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "不错",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "像作品一样",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "真的不一样",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "你知道",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:00",
+        "text": "找不到你的时候我有多担心了",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:30",
+        "text": "作词",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      },
+      {
+        "ts": "00:00:30",
+        "text": "作曲",
+        "speaker": "他",
+        "tone": "平静",
+        "sound": []
+      }
+    ],
+    "scene": "短视频情景剧，一方表达对方离家出走时自己的担忧，后转温情。含关怀与轻度反思。",
+    "behaviors": [
+      {
+        "desc": "表达找不到对方时的担忧与情绪"
+      },
+      {
+        "desc": "收尾（作词作曲标注）"
+      }
+    ],
+    "tone_summary": "（自动）他视角独白，语气以平静为主，题材偏现代情侣。",
+    "genre_tags": [
+      "现代情侣"
+    ],
+    "emotion_arc": "（自动）平静",
+    "intensity": "中",
+    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+    "signature_elements": [],
+    "sensitive": false,
+    "tier": "auto",
+    "speaker_confident": false
+  }
+]

@@ -1,0 +1,44 @@
+# ===== 凭证（绝不上传，避免账号泄露）=====
+cookies_all.txt
+cookies_fixed.txt
+cookies_min.txt
+cookies_youtube.txt
+
+# ===== 大二进制（可重新下载，不入库）=====
+node.exe
+yt-dlp-nightly.exe
+
+# ===== 日志与运行痕迹 =====
+*.log
+pipeline_spawn_err.log
+pipeline_stderr.log
+pipeline_stdout.log
+webui_server.log
+pwsh_out.txt
+playlist.err
+
+# ===== Python 缓存 =====
+__pycache__/
+*.pyc
+
+# ===== 项目内部记忆（含工作日志，不公开）=====
+.workbuddy/
+
+# ===== 测试 / 临时目录 =====
+output_mrlovewords9272/
+output_test/
+test_age/
+
+# ===== 备份文件 =====
+*.bak
+
+# ===== 旧流程中间产物（已被 enriched 取代）=====
+doc_data/batch_*.txt
+doc_data/behavior_0*.json
+doc_data/behavior_merged.json
+doc_data/behavior_fixed.json
+doc_data/videos.json
+doc_data/videos_fixed.json
+doc_data/videos_best.json
+doc_data/corr_in/
+doc_data/corr_out/

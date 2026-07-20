@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lの女性向音声剧 · 结构化总册</title>
+<style>
+  :root{
+    --bg:#faf7f2; --card:#ffffff; --ink:#2b2b2b; --muted:#7a7068;
+    --accent:#b56a8c; --accent2:#7a9e9e; --line:#ece4da;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);min-height:100vh;
+    display:flex;align-items:center;justify-content:center;padding:32px}
+  .wrap{width:100%;max-width:680px}
+  header{text-align:center;margin-bottom:36px}
+  header h1{font-size:26px;letter-spacing:1px;color:var(--accent)}
+  header p{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.7}
+  .cards{display:grid;gap:18px}
+  a.card{display:block;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:24px 26px;text-decoration:none;color:inherit;
+    transition:.18s;box-shadow:0 2px 10px rgba(0,0,0,.03)}
+  a.card:hover{transform:translateY(-3px);border-color:var(--accent);
+    box-shadow:0 8px 22px rgba(181,106,140,.16)}
+  a.card .t{font-size:18px;font-weight:700;color:var(--ink)}
+  a.card .d{margin-top:8px;font-size:13px;color:var(--muted);line-height:1.6}
+  a.card .tag{display:inline-block;margin-top:14px;font-size:12px;
+    color:#fff;background:var(--accent2);padding:3px 10px;border-radius:20px}
+  footer{margin-top:34px;text-align:center;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Lの女性向音声剧 · 结构化总册</h1>
+    <p>YouTube 频道 @mrlovewords9272 内容结构化工程<br>
+       已转写 225 篇 · 持续增强中</p>
+  </header>
+  <div class="cards">
+    <a class="card" href="mrlovewords9272_总册.html">
+      <div class="t">📖 结构化总册</div>
+      <div class="d">场景 / 台词 / 行为 + 已增强篇目的说话人 · 语气 · 音效标注与内容分析。支持搜索与目录跳转。</div>
+      <span class="tag">主阅读页</span>
+    </a>
+    <a class="card" href="progress.html">
+      <div class="t">📊 任务进度看板</div>
+      <div class="d">45 块（5 篇/块）结构化增强的实时状态灯，随时查看当前推进到哪、是否卡住。</div>
+      <span class="tag">进度追踪</span>
+    </a>
+  </div>
+  <footer>仓库：github.com/fengdiandian888/voice-drama · GitHub Pages 托管</footer>
+</div>
+</body>
+</html>

@@ -1,378 +1,378 @@
 [
-  {
-    "id": "QSauuYA9GEk",
-    "title": "【Lの惩罚语录】惩罚语录 11",
-    "title_zh": "",
-    "duration": "00:00:16",
-    "link": "https://www.youtube.com/watch?v=QSauuYA9GEk",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "你明明知道",
-        "speaker": "哥哥",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:02",
-        "text": "哥哥讨厌你受黄骗我",
-        "speaker": "哥哥",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:04",
-        "text": "为什么还要这样做",
-        "speaker": "哥哥",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:06",
-        "text": "自己说",
-        "speaker": "哥哥",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:08",
-        "text": "记下",
-        "speaker": "哥哥",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:11",
-        "text": "三十",
-        "speaker": "哥哥",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:15",
-        "text": "那就让你说得来",
-        "speaker": "哥哥",
-        "tone": "平静",
-        "sound": []
-      }
-    ],
-    "scene": "极短视频，“哥哥”因对方欺骗自己而责问，要求记下娇训。含轻度管娇语气。",
-    "behaviors": [
-      {
-        "desc": "质问对方为何明知自己讨厌被骗仍为之"
-      },
-      {
-        "desc": "令其自述并记下，准备惩戒"
-      }
-    ],
-    "tone_summary": "（自动）哥哥视角独白，语气以平静为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）平静",
-    "intensity": "中",
-    "listener_role": "（自动）被哥哥倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": true
-  },
-  {
-    "id": "3HVPSmSMgSg",
-    "title": "【Lの惩罚语录】惩罚语录 12",
-    "title_zh": "",
-    "duration": "00:00:08",
-    "link": "https://www.youtube.com/watch?v=3HVPSmSMgSg",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "掌本施了你，都学会装病逃脱惩罚了",
-        "speaker": "他",
-        "tone": "命令",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "今天看我怎么收拾你",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      }
-    ],
-    "scene": "极短视频，“哥哥”指出对方装病逃避惩罚，扬言要“收拾”。含轻度管娇语气。",
-    "behaviors": [
-      {
-        "desc": "揭穿对方装病逃罚，表明要予以惩戒"
-      }
-    ],
-    "tone_summary": "（自动）他视角独白，语气以命令、平静为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）命令→平静",
-    "intensity": "中",
-    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
-    "signature_elements": [
-      "惩罚"
-    ],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": false
-  },
-  {
-    "id": "LHv8uFiWMaQ",
-    "title": "【Lの惩罚语录】惩罚语录 3",
-    "title_zh": "",
-    "duration": "00:00:10",
-    "link": "https://www.youtube.com/watch?v=LHv8uFiWMaQ",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "对",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "就这样",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "怕好",
-        "speaker": "他",
-        "tone": "温柔",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "这才是你",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "陪我工作的姿势",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "懂了吗",
-        "speaker": "他",
-        "tone": "询问",
-        "sound": []
-      }
-    ],
-    "scene": "极短视频，一方认可对方“陪我工作”的姿势，含支配关系设定。",
-    "behaviors": [
-      {
-        "desc": "肯定对方陪伴工作的姿势，要求其领会"
-      }
-    ],
-    "tone_summary": "（自动）他视角独白，语气以平静、温柔、询问为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）平静→温柔→平静",
-    "intensity": "中",
-    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": false
-  },
-  {
-    "id": "fyeDrBS7aXo",
-    "title": "【Lの短视频】 《巴掌印》情景剧  二 二次尝试",
-    "title_zh": "",
-    "duration": "00:00:20",
-    "link": "https://www.youtube.com/watch?v=fyeDrBS7aXo",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "你愿意",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "再试一次吗",
-        "speaker": "他",
-        "tone": "询问",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "你确实挺聪明的",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "知道怎么说才能让我心软",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "去那里",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "唐阿",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "脚气",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      }
-    ],
-    "scene": "短视频情景剧，一方询问对方是否愿意再试一次，点出其懂得撒娇让人生怜。含轻度管娇/试探情境。",
-    "behaviors": [
-      {
-        "desc": "询问是否愿意再尝试，点破其撒娇策略"
-      }
-    ],
-    "tone_summary": "（自动）他视角独白，语气以平静、询问为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）平静",
-    "intensity": "中",
-    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": false
-  },
-  {
-    "id": "Tmv7schO4VU",
-    "title": "【Lの短视频】 《爱与责罚主题》情景剧",
-    "title_zh": "",
-    "duration": "00:00:20",
-    "link": "https://www.youtube.com/watch?v=Tmv7schO4VU",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "好了好了不哭了",
-        "speaker": "他",
-        "tone": "温柔",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "不哭了",
-        "speaker": "他",
-        "tone": "温柔",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "接受了",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "来来来",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "过来",
-        "speaker": "他",
-        "tone": "命令",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "我看看你的手",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "看起来倒是没什么事",
-        "speaker": "他",
-        "tone": "命令",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "对不起",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "我是不是又让你担心了",
-        "speaker": "他",
-        "tone": "责备",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "没什么好对不起的",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "不过下次不要再这样了",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "知不知道",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      }
-    ],
-    "scene": "短视频情景剧，一方安抚哭泣者、查看其手，对方道歉称又让人担心。含关怀与轻度责娇学反思。",
-    "behaviors": [
-      {
-        "desc": "安抚哭泣者并查看其手，对方致歉"
-      },
-      {
-        "desc": "表示无需道歉，叮嘱下次勿再如此"
-      }
-    ],
-    "tone_summary": "（自动）他视角独白，语气以平静、温柔、命令为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）温柔→命令→平静",
-    "intensity": "中偏高",
-    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": false
-  }
+ {
+  "id": "QSauuYA9GEk",
+  "title": "【Lの惩罚语录】惩罚语录 11",
+  "title_zh": "惩罚语录 11",
+  "duration": "00:00:16",
+  "link": "https://www.youtube.com/watch?v=QSauuYA9GEk",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "你明明知道",
+    "speaker": "哥哥",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:02",
+    "text": "哥哥讨厌你受黄骗我",
+    "speaker": "哥哥",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:04",
+    "text": "为什么还要这样做",
+    "speaker": "哥哥",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:06",
+    "text": "自己说",
+    "speaker": "哥哥",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:08",
+    "text": "记下",
+    "speaker": "哥哥",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:11",
+    "text": "三十",
+    "speaker": "哥哥",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:15",
+    "text": "那就让你说得来",
+    "speaker": "哥哥",
+    "tone": "平静",
+    "sound": []
+   }
+  ],
+  "scene": "极短视频，“哥哥”因对方欺骗自己而责问，要求记下娇训。含轻度管娇语气。",
+  "behaviors": [
+   {
+    "desc": "质问对方为何明知自己讨厌被骗仍为之"
+   },
+   {
+    "desc": "令其自述并记下，准备惩戒"
+   }
+  ],
+  "tone_summary": "（自动）哥哥视角独白，语气以平静为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）平静",
+  "intensity": "中",
+  "listener_role": "（自动）被哥哥倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": true
+ },
+ {
+  "id": "3HVPSmSMgSg",
+  "title": "【Lの惩罚语录】惩罚语录 12",
+  "title_zh": "惩罚语录 12",
+  "duration": "00:00:08",
+  "link": "https://www.youtube.com/watch?v=3HVPSmSMgSg",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "掌本施了你，都学会装病逃脱惩罚了",
+    "speaker": "他",
+    "tone": "命令",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "今天看我怎么收拾你",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   }
+  ],
+  "scene": "极短视频，“哥哥”指出对方装病逃避惩罚，扬言要“收拾”。含轻度管娇语气。",
+  "behaviors": [
+   {
+    "desc": "揭穿对方装病逃罚，表明要予以惩戒"
+   }
+  ],
+  "tone_summary": "（自动）他视角独白，语气以命令、平静为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）命令→平静",
+  "intensity": "中",
+  "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+  "signature_elements": [
+   "惩罚"
+  ],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": false
+ },
+ {
+  "id": "LHv8uFiWMaQ",
+  "title": "【Lの惩罚语录】惩罚语录 3",
+  "title_zh": "惩罚语录 3",
+  "duration": "00:00:10",
+  "link": "https://www.youtube.com/watch?v=LHv8uFiWMaQ",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "对",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "就这样",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "怕好",
+    "speaker": "他",
+    "tone": "温柔",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "这才是你",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "陪我工作的姿势",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "懂了吗",
+    "speaker": "他",
+    "tone": "询问",
+    "sound": []
+   }
+  ],
+  "scene": "极短视频，一方认可对方“陪我工作”的姿势，含支配关系设定。",
+  "behaviors": [
+   {
+    "desc": "肯定对方陪伴工作的姿势，要求其领会"
+   }
+  ],
+  "tone_summary": "（自动）他视角独白，语气以平静、温柔、询问为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）平静→温柔→平静",
+  "intensity": "中",
+  "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": false
+ },
+ {
+  "id": "fyeDrBS7aXo",
+  "title": "【Lの短视频】 《巴掌印》情景剧  二 二次尝试",
+  "title_zh": "《巴掌印》情景剧  二 二次尝试",
+  "duration": "00:00:20",
+  "link": "https://www.youtube.com/watch?v=fyeDrBS7aXo",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "你愿意",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "再试一次吗",
+    "speaker": "他",
+    "tone": "询问",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "你确实挺聪明的",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "知道怎么说才能让我心软",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "去那里",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "唐阿",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "脚气",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   }
+  ],
+  "scene": "短视频情景剧，一方询问对方是否愿意再试一次，点出其懂得撒娇让人生怜。含轻度管娇/试探情境。",
+  "behaviors": [
+   {
+    "desc": "询问是否愿意再尝试，点破其撒娇策略"
+   }
+  ],
+  "tone_summary": "（自动）他视角独白，语气以平静、询问为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）平静",
+  "intensity": "中",
+  "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": false
+ },
+ {
+  "id": "Tmv7schO4VU",
+  "title": "【Lの短视频】 《爱与责罚主题》情景剧",
+  "title_zh": "《爱与责罚主题》情景剧",
+  "duration": "00:00:20",
+  "link": "https://www.youtube.com/watch?v=Tmv7schO4VU",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "好了好了不哭了",
+    "speaker": "他",
+    "tone": "温柔",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "不哭了",
+    "speaker": "他",
+    "tone": "温柔",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "接受了",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "来来来",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "过来",
+    "speaker": "他",
+    "tone": "命令",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "我看看你的手",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "看起来倒是没什么事",
+    "speaker": "他",
+    "tone": "命令",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "对不起",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "我是不是又让你担心了",
+    "speaker": "他",
+    "tone": "责备",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "没什么好对不起的",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "不过下次不要再这样了",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "知不知道",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   }
+  ],
+  "scene": "短视频情景剧，一方安抚哭泣者、查看其手，对方道歉称又让人担心。含关怀与轻度责娇学反思。",
+  "behaviors": [
+   {
+    "desc": "安抚哭泣者并查看其手，对方致歉"
+   },
+   {
+    "desc": "表示无需道歉，叮嘱下次勿再如此"
+   }
+  ],
+  "tone_summary": "（自动）他视角独白，语气以平静、温柔、命令为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）温柔→命令→平静",
+  "intensity": "中偏高",
+  "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": false
+ }
 ]

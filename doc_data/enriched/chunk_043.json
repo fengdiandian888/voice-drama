@@ -1,361 +1,361 @@
 [
-  {
-    "id": "hK1pJxXF8vA",
-    "title": "【Lの短视频】《反攻失败被教训》情景剧",
-    "title_zh": "",
-    "duration": "00:00:09",
-    "link": "https://www.youtube.com/watch?v=hK1pJxXF8vA",
-    "lines": [
-      {
-        "ts": "00:00:01",
-        "text": "小东西啊",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:01",
-        "text": "真是长本事了",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:01",
-        "text": "现在都感激到我头上来了",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:01",
-        "text": "哪有",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      }
-    ],
-    "scene": "极短视频，一方调侃对方“长本事了”竟敢顶撞。含轻度管娇语气。",
-    "behaviors": [
-      {
-        "desc": "调侃对方竟敢顶撞，表示意外"
-      }
-    ],
-    "tone_summary": "（自动）他视角独白，语气以平静为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）平静",
-    "intensity": "中",
-    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": false
-  },
-  {
-    "id": "QLhWcLnOTGk",
-    "title": "【Lの短视频】《巴掌印》情景剧 一 初次实践",
-    "title_zh": "",
-    "duration": "00:00:34",
-    "link": "https://www.youtube.com/watch?v=QLhWcLnOTGk",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "很紧张吗",
-        "speaker": "他",
-        "tone": "询问",
-        "sound": []
-      },
-      {
-        "ts": "00:00:04",
-        "text": "先喝口水吧",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:09",
-        "text": "是因为见我",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:11",
-        "text": "随选择穿的裙子吗",
-        "speaker": "他",
-        "tone": "询问",
-        "sound": []
-      },
-      {
-        "ts": "00:00:14",
-        "text": "为了方便",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:17",
-        "text": "但是忘记提醒你",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:19",
-        "text": "应该穿裤子的",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:22",
-        "text": "被裤子包裹",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:25",
-        "text": "我有不一样的感觉",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:28",
-        "text": "现在准备好了吗",
-        "speaker": "他",
-        "tone": "询问",
-        "sound": []
-      },
-      {
-        "ts": "00:00:31",
-        "text": "那我们",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:31",
-        "text": "开始",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      }
-    ],
-    "scene": "短视频情景剧，一方让紧张者喝水、询问穿着，提示应有不同准备，随后开始。含角色扮演式互动。",
-    "behaviors": [
-      {
-        "desc": "让紧张者喝水缓和"
-      },
-      {
-        "desc": "询问对方穿着裙子的缘由"
-      },
-      {
-        "desc": "提示应穿裤子并询问是否准备好"
-      },
-      {
-        "desc": "宣布开始"
-      }
-    ],
-    "tone_summary": "（自动）他视角独白，语气以平静、询问为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）询问→平静",
-    "intensity": "中",
-    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": false
-  },
-  {
-    "id": "FbgGPR3w3aw",
-    "title": "【Lの短视频】《求饶与拒绝》情景剧",
-    "title_zh": "",
-    "duration": "00:00:27",
-    "link": "https://www.youtube.com/watch?v=FbgGPR3w3aw",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "可以求饶",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:02",
-        "text": "但是不准拒绝主人",
-        "speaker": "主人",
-        "tone": "命令",
-        "sound": []
-      },
-      {
-        "ts": "00:00:04",
-        "text": "为什么",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:07",
-        "text": "求饶的话",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:09",
-        "text": "免罚就是主人赏你的",
-        "speaker": "主人",
-        "tone": "责备",
-        "sound": []
-      },
-      {
-        "ts": "00:00:11",
-        "text": "拒绝",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:14",
-        "text": "你没有这个权力",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:16",
-        "text": "只会被打得刚才",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:19",
-        "text": "在车",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:19",
-        "text": "33",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:19",
-        "text": "34",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:19",
-        "text": "感忧",
-        "speaker": "主人",
-        "tone": "平静",
-        "sound": []
-      }
-    ],
-    "scene": "短视频情景剧，一方表明可以求饶但不得拒绝主人，拒绝将被加重惩戒。含管娇规则设定。",
-    "behaviors": [
-      {
-        "desc": "阐明求饶与拒绝的区别及后果"
-      },
-      {
-        "desc": "计数，强调惩戒进行中"
-      }
-    ],
-    "tone_summary": "（自动）主人视角独白，语气以平静、命令、责备为主，题材偏主仆/调教。",
-    "genre_tags": [
-      "主仆/调教"
-    ],
-    "emotion_arc": "（自动）平静",
-    "intensity": "中",
-    "listener_role": "（自动）被主人倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": true
-  },
-  {
-    "id": "-SSkrULlBGE",
-    "title": "【Lの短视频】《爱与责罚主题》情景剧",
-    "title_zh": "",
-    "duration": "00:00:03",
-    "link": "https://www.youtube.com/watch?v=-SSkrULlBGE",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "冰面皮了",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      },
-      {
-        "ts": "00:00:00",
-        "text": "爬过来",
-        "speaker": "他",
-        "tone": "命令",
-        "sound": []
-      }
-    ],
-    "scene": "极短视频，一方命令对方“爬过来”。含支配指令式互动。",
-    "behaviors": [
-      {
-        "desc": "命令对方爬过来"
-      }
-    ],
-    "tone_summary": "（自动）他视角独白，语气以平静、命令为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）平静→命令",
-    "intensity": "中",
-    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": false
-  },
-  {
-    "id": "21TzApFUZkU",
-    "title": "【Lの短视频】《爱与责罚主题》情景剧",
-    "title_zh": "",
-    "duration": "00:00:01",
-    "link": "https://www.youtube.com/watch?v=21TzApFUZkU",
-    "lines": [
-      {
-        "ts": "00:00:00",
-        "text": "请来",
-        "speaker": "他",
-        "tone": "平静",
-        "sound": []
-      }
-    ],
-    "scene": "极短视频，仅一句简短指令。含支配指令式互动。",
-    "behaviors": [
-      {
-        "desc": "发出简短指令"
-      }
-    ],
-    "tone_summary": "（自动）他视角独白，语气以平静为主，题材偏现代情侣。",
-    "genre_tags": [
-      "现代情侣"
-    ],
-    "emotion_arc": "（自动）平静",
-    "intensity": "中",
-    "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
-    "signature_elements": [],
-    "sensitive": false,
-    "tier": "auto",
-    "speaker_confident": false
-  }
+ {
+  "id": "hK1pJxXF8vA",
+  "title": "【Lの短视频】《反攻失败被教训》情景剧",
+  "title_zh": "《反攻失败被教训》情景剧",
+  "duration": "00:00:09",
+  "link": "https://www.youtube.com/watch?v=hK1pJxXF8vA",
+  "lines": [
+   {
+    "ts": "00:00:01",
+    "text": "小东西啊",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:01",
+    "text": "真是长本事了",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:01",
+    "text": "现在都感激到我头上来了",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:01",
+    "text": "哪有",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   }
+  ],
+  "scene": "极短视频，一方调侃对方“长本事了”竟敢顶撞。含轻度管娇语气。",
+  "behaviors": [
+   {
+    "desc": "调侃对方竟敢顶撞，表示意外"
+   }
+  ],
+  "tone_summary": "（自动）他视角独白，语气以平静为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）平静",
+  "intensity": "中",
+  "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": false
+ },
+ {
+  "id": "QLhWcLnOTGk",
+  "title": "【Lの短视频】《巴掌印》情景剧 一 初次实践",
+  "title_zh": "《巴掌印》情景剧 一 初次实践",
+  "duration": "00:00:34",
+  "link": "https://www.youtube.com/watch?v=QLhWcLnOTGk",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "很紧张吗",
+    "speaker": "他",
+    "tone": "询问",
+    "sound": []
+   },
+   {
+    "ts": "00:00:04",
+    "text": "先喝口水吧",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:09",
+    "text": "是因为见我",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:11",
+    "text": "随选择穿的裙子吗",
+    "speaker": "他",
+    "tone": "询问",
+    "sound": []
+   },
+   {
+    "ts": "00:00:14",
+    "text": "为了方便",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:17",
+    "text": "但是忘记提醒你",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:19",
+    "text": "应该穿裤子的",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:22",
+    "text": "被裤子包裹",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:25",
+    "text": "我有不一样的感觉",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:28",
+    "text": "现在准备好了吗",
+    "speaker": "他",
+    "tone": "询问",
+    "sound": []
+   },
+   {
+    "ts": "00:00:31",
+    "text": "那我们",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:31",
+    "text": "开始",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   }
+  ],
+  "scene": "短视频情景剧，一方让紧张者喝水、询问穿着，提示应有不同准备，随后开始。含角色扮演式互动。",
+  "behaviors": [
+   {
+    "desc": "让紧张者喝水缓和"
+   },
+   {
+    "desc": "询问对方穿着裙子的缘由"
+   },
+   {
+    "desc": "提示应穿裤子并询问是否准备好"
+   },
+   {
+    "desc": "宣布开始"
+   }
+  ],
+  "tone_summary": "（自动）他视角独白，语气以平静、询问为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）询问→平静",
+  "intensity": "中",
+  "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": false
+ },
+ {
+  "id": "FbgGPR3w3aw",
+  "title": "【Lの短视频】《求饶与拒绝》情景剧",
+  "title_zh": "《求饶与拒绝》情景剧",
+  "duration": "00:00:27",
+  "link": "https://www.youtube.com/watch?v=FbgGPR3w3aw",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "可以求饶",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:02",
+    "text": "但是不准拒绝主人",
+    "speaker": "主人",
+    "tone": "命令",
+    "sound": []
+   },
+   {
+    "ts": "00:00:04",
+    "text": "为什么",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:07",
+    "text": "求饶的话",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:09",
+    "text": "免罚就是主人赏你的",
+    "speaker": "主人",
+    "tone": "责备",
+    "sound": []
+   },
+   {
+    "ts": "00:00:11",
+    "text": "拒绝",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:14",
+    "text": "你没有这个权力",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:16",
+    "text": "只会被打得刚才",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:19",
+    "text": "在车",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:19",
+    "text": "33",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:19",
+    "text": "34",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:19",
+    "text": "感忧",
+    "speaker": "主人",
+    "tone": "平静",
+    "sound": []
+   }
+  ],
+  "scene": "短视频情景剧，一方表明可以求饶但不得拒绝主人，拒绝将被加重惩戒。含管娇规则设定。",
+  "behaviors": [
+   {
+    "desc": "阐明求饶与拒绝的区别及后果"
+   },
+   {
+    "desc": "计数，强调惩戒进行中"
+   }
+  ],
+  "tone_summary": "（自动）主人视角独白，语气以平静、命令、责备为主，题材偏主仆/调教。",
+  "genre_tags": [
+   "主仆/调教"
+  ],
+  "emotion_arc": "（自动）平静",
+  "intensity": "中",
+  "listener_role": "（自动）被主人倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": true
+ },
+ {
+  "id": "-SSkrULlBGE",
+  "title": "【Lの短视频】《爱与责罚主题》情景剧",
+  "title_zh": "《爱与责罚主题》情景剧",
+  "duration": "00:00:03",
+  "link": "https://www.youtube.com/watch?v=-SSkrULlBGE",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "冰面皮了",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   },
+   {
+    "ts": "00:00:00",
+    "text": "爬过来",
+    "speaker": "他",
+    "tone": "命令",
+    "sound": []
+   }
+  ],
+  "scene": "极短视频，一方命令对方“爬过来”。含支配指令式互动。",
+  "behaviors": [
+   {
+    "desc": "命令对方爬过来"
+   }
+  ],
+  "tone_summary": "（自动）他视角独白，语气以平静、命令为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）平静→命令",
+  "intensity": "中",
+  "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": false
+ },
+ {
+  "id": "21TzApFUZkU",
+  "title": "【Lの短视频】《爱与责罚主题》情景剧",
+  "title_zh": "《爱与责罚主题》情景剧",
+  "duration": "00:00:01",
+  "link": "https://www.youtube.com/watch?v=21TzApFUZkU",
+  "lines": [
+   {
+    "ts": "00:00:00",
+    "text": "请来",
+    "speaker": "他",
+    "tone": "平静",
+    "sound": []
+   }
+  ],
+  "scene": "极短视频，仅一句简短指令。含支配指令式互动。",
+  "behaviors": [
+   {
+    "desc": "发出简短指令"
+   }
+  ],
+  "tone_summary": "（自动）他视角独白，语气以平静为主，题材偏现代情侣。",
+  "genre_tags": [
+   "现代情侣"
+  ],
+  "emotion_arc": "（自动）平静",
+  "intensity": "中",
+  "listener_role": "（自动）被他倾诉/照顾/管教的一方（你）",
+  "signature_elements": [],
+  "sensitive": false,
+  "tier": "auto",
+  "speaker_confident": false
+ }
 ]

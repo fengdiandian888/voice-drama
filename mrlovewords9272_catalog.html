@@ -400,7 +400,6 @@ function cardHTML(r, kw){
     '<div class="meta">时长 '+esc(r.duration)+' · <a href="'+esc(r.link)+'" target="_blank" rel="noopener">YouTube 原片 ↗</a></div>'+
     '<div class="sec"><div class="t">场景</div>'+scene+'</div>'+
     metaHTML(r, kw)+
-    charPanelHTML(r, kw)+
     '<div class="sec"><div class="t">行为</div><ul class="beh">'+behHTML+'</ul></div>'+
     '<div class="sec"><div class="t">台词</div><div class="transcript view-'+LINE_VIEW+'">'+lineHTML2+'</div></div>'+
     enhHint+
@@ -507,32 +506,6 @@ function renderFilters(){
 /* ===== 全局聚合：题材 / 角色 / 强度 / 身份 ===== */
 function spkKey(r, li){ const ov=getOV(r.id,li); return (ov&&ov.speaker!==undefined)?ov.speaker:(r.lines[li].speaker||""); }
 function spkHier(r, li){ const ov=getOV(r.id,li); const s=(ov&&ov.speaker!==undefined)?ov.speaker:(r.lines[li].speaker||""); return (ov&&ov.hier)?ov.hier:hierOf(s); }
-function pieceSpeakers(r){
-  const m={};
-  (r.lines||[]).forEach((l,i)=>{
-    const s=spkKey(r,i); if(!s) return;
-    const h=spkHier(r,i);
-    if(!m[s]) m[s]={name:s,hier:h,count:0};
-    m[s].count++;
-  });
-  return Object.values(m).sort((a,b)=>b.count-a.count);
-}
-function charPanelHTML(r, kw){
-  if(!r.enriched) return '';
-  const sps=pieceSpeakers(r); if(!sps.length) return '';
-  const max=sps[0].count;
-  const rows=sps.map(s=>{
-    const color=s.hier==="sup"?"#2563eb":s.hier==="sub"?"#db2777":s.hier==="other"?"#4b5563":"#9ca3af";
-    const w=Math.max(6,Math.round(s.count/max*100));
-    return '<div style="display:flex;align-items:center;gap:8px;margin:5px 0;font-size:12.5px">'+
-      '<span style="flex:0 0 92px;color:'+color+';font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+hl(s.name,kw)+'</span>'+
-      '<span style="flex:1;height:8px;background:#eef2f7;border-radius:5px;overflow:hidden"><i style="display:block;height:100%;width:'+w+'%;background:'+color+'"></i></span>'+
-      '<span style="flex:0 0 26px;text-align:right;color:#64748b">'+s.count+'</span></div>';
-  }).join('');
-  const supN=sps.filter(s=>s.hier==="sup").length, subN=sps.filter(s=>s.hier==="sub").length;
-  const pat=(supN||subN)?'<span style="font-size:11px;color:#64748b;margin-left:8px">格局：'+supN+' 上位 · '+subN+' 下位</span>':'';
-  return '<div class="sec"><div class="t">角色关系'+pat+'</div>'+rows+'</div>';
-}
 
 const GENRE_COUNT={}, SPEAKER_COUNT={}, INTENSITY_COUNT={};
 const HIER_TOTAL={sup:0,sub:0,other:0,unknown:0};

@@ -26,6 +26,12 @@
   .stats{font-size:12px;color:var(--sub);margin-left:auto;text-align:right}
   .search{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;outline:none}
   .search:focus{border-color:var(--accent)}
+  .filters{display:flex;flex-wrap:wrap;gap:10px 16px;margin:10px 0 2px}
+  .filters .fgrp{display:flex;align-items:center;gap:6px;font-size:12px;color:#64748b}
+  .filters .fgrp>b{color:#475569}
+  .chip{cursor:pointer;padding:2px 10px;border-radius:999px;border:1px solid #e2e8f0;background:#fff;color:#475569;font-size:12px;user-select:none;transition:.12s}
+  .chip:hover{border-color:#2563eb;color:#2563eb}
+  .chip.on{background:#2563eb;color:#fff;border-color:#2563eb}
   .legend{font-size:11px;color:var(--sub);display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
   .legend .grp{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
   .legend .it{display:flex;align-items:center;gap:4px}
@@ -65,6 +71,7 @@
   .badge.ok{background:#dcfce7;color:#16a34a}
   .badge.auto{background:#fef3c7;color:#b45309}
   .badge.base{background:#f1f5f9;color:#94a3b8}
+  /* 说话人 / 语气 / 音效 旧样式保留（纠错弹窗用色一致），仅默认视图不再用药丸堆叠 */
   .line-speaker{display:inline-block;border-radius:4px;font-size:11px;padding:0 5px;margin-right:4px;font-weight:700}
   .line-speaker[data-hier="sup"]{color:#2563eb;background:#eff6ff}
   .line-speaker[data-hier="sub"]{color:#db2777;background:#fdf2f8}
@@ -72,8 +79,51 @@
   .line-speaker[data-hier="unknown"]{color:#9ca3af;background:#f9fafb;border:1px dashed #cbd5e1}
   .line-tone{display:inline-block;border-radius:4px;font-size:11px;padding:0 5px;margin-right:4px;font-weight:600;color:#fff}
   .line-sound{display:inline-block;background:#fce7f3;color:#be185d;border-radius:4px;font-size:11px;padding:0 5px;margin-left:3px;font-weight:600}
-  body.edit .line-speaker, body.edit .line-tone{cursor:pointer;outline:1px dashed #cbd5e1;outline-offset:1px}
-  body.edit .line-speaker:hover, body.edit .line-tone:hover{filter:brightness(.95)}
+  body.edit .line-speaker{cursor:pointer;outline:1px dashed #cbd5e1;outline-offset:1px}
+  body.edit .line-speaker:hover{filter:brightness(.95)}
+
+  /* ── 台词三视图（统一用 .line-speaker 承载，先中和旧药丸底色）── */
+  .transcript .line-speaker{background:none!important;border:none!important;padding:0;margin:0;font-weight:500;border-radius:0}
+
+  .transcript.view-script .tline{display:grid;grid-template-columns:52px 1fr;gap:2px 12px;align-items:baseline;margin:0;padding:6px 0;border-top:1px solid #f1f5f9}
+  .transcript.view-script .tline:first-child{border-top:none}
+  .transcript.view-script .line-speaker{display:block;text-align:right;font-size:13px;white-space:nowrap}
+  .transcript.view-script .line-speaker[data-hier="sup"]{color:#2563eb}
+  .transcript.view-script .line-speaker[data-hier="sub"]{color:#db2777}
+  .transcript.view-script .line-speaker[data-hier="other"]{color:#4b5563}
+  .transcript.view-script .line-speaker[data-hier="unknown"]{color:#9ca3af}
+  .transcript.view-script .dia{padding-left:10px;border-left:3px solid #e2e8f0;font-size:13px;line-height:1.7;color:#1e293b}
+  .transcript.view-script .dia[data-tc]{border-left-color:var(--tc)}
+  .transcript.view-script .snd{color:#94a3b8;font-size:11px;margin-left:4px}
+
+  .transcript.view-bubble{display:flex;flex-direction:column;gap:8px;padding:6px 0}
+  .transcript.view-bubble .tline{display:flex;margin:0}
+  .transcript.view-bubble .tline[data-h="sup"]{justify-content:flex-start}
+  .transcript.view-bubble .tline[data-h="sub"]{justify-content:flex-end}
+  .transcript.view-bubble .tline[data-h="other"],.transcript.view-bubble .tline[data-h="unknown"]{justify-content:flex-start}
+  .transcript.view-bubble .bub{max-width:82%;border-radius:12px;padding:7px 12px;font-size:13px;line-height:1.6}
+  .transcript.view-bubble .tline[data-h="sup"] .bub{background:#eff6ff;border:1px solid #bfdbfe}
+  .transcript.view-bubble .tline[data-h="sub"] .bub{background:#fdf2f8;border:1px solid #fbcfe8}
+  .transcript.view-bubble .tline[data-h="other"] .bub,.transcript.view-bubble .tline[data-h="unknown"] .bub{background:#f8fafc;border:1px solid #e2e8f0}
+  .transcript.view-bubble .line-speaker{display:block;font-size:11px;margin-bottom:2px}
+  .transcript.view-bubble .tline[data-h="sup"] .line-speaker{color:#2563eb}
+  .transcript.view-bubble .tline[data-h="sub"] .line-speaker{color:#db2777;text-align:right}
+  .transcript.view-bubble .tline[data-h="other"] .line-speaker{color:#4b5563}
+  .transcript.view-bubble .snd{color:#93c5fd;font-size:11px;margin-left:4px}
+  .transcript.view-bubble .tline[data-h="sub"] .snd{color:#f0abbc}
+
+  .transcript.view-plain .tline{margin:0;padding:5px 0;border-top:1px solid #f8fafc}
+  .transcript.view-plain .tline:first-child{border-top:none}
+  .transcript.view-plain .line-speaker{display:inline;font-size:13px;margin-right:6px}
+  .transcript.view-plain .line-speaker[data-hier="sup"]{color:#2563eb}
+  .transcript.view-plain .line-speaker[data-hier="sub"]{color:#db2777}
+  .transcript.view-plain .line-speaker[data-hier="other"]{color:#475569}
+  .transcript.view-plain .dia{font-size:13px;line-height:1.75;color:#334155}
+  .transcript.view-plain .snd{color:#94a3b8;font-size:11px;margin-left:4px}
+
+  .viewbtns{display:inline-flex;gap:4px;margin-left:14px;vertical-align:middle}
+  .viewbtns button{border:1px solid #e2e8f0;background:#fff;color:#475569;border-radius:7px;padding:4px 11px;font-size:12px;font-weight:600;cursor:pointer}
+  .viewbtns button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
   .meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
   .meta-item{background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:7px 10px}
   .meta-item .k{font-size:11px;color:var(--sub);font-weight:600;margin-bottom:2px}
@@ -114,7 +164,8 @@
     </div>
     <div class="stats" id="stats"></div>
   </div>
-  <input class="search" id="search" placeholder="搜索：标题 / 说话人 / 语气 / 场景 / 台词 / 题材 / 元素…">
+  <input class="search" id="search" placeholder="搜索：标题 / 说话人 / 语气 / 场景 / 台词 / 题材 / 元素…（自动同义词归并）">
+  <div class="filters" id="filters"></div>
   <div class="legend">
     <span class="grp"><b>身份：</b>
       <span class="it"><span class="sw" style="background:#2563eb"></span>上位者</span>
@@ -130,6 +181,12 @@
       <span class="it"><span class="sw" style="background:#9ca3af"></span>平静/陈述</span>
       <span class="it"><span class="sw" style="background:#a855f7"></span>撒娇/亲密</span>
       <span class="it"><span class="sw" style="background:#6b21a8"></span>冷淡/嘲讽</span>
+    </span>
+    <span class="viewbtns" id="viewBtns">
+      <b>台词视图：</b>
+      <button data-view="script" class="on">剧本</button>
+      <button data-view="bubble">气泡</button>
+      <button data-view="plain">纯文本</button>
     </span>
     <button class="editbtn" id="editBtn">✎ 编辑台词</button>
     <button class="resetbtn" id="ovReset">清空纠错</button>
@@ -171,6 +228,8 @@ const HAND = DATA.filter(r=>r.enriched && r.tier!=="auto").length;
 const AUTO = DATA.filter(r=>r.enriched && r.tier==="auto").length;
 
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+// 去掉频道前缀【Lの女性向音声】（数据中常见残形 "Lの女性向音声】"）
+function cleanTitle(s){return (s||"").replace(/^【?Lの女性向音声[】\]]?\s*/, "");}
 
 document.getElementById("p1v").textContent = ENRICHED + " / " + DONE + " 篇（" + Math.round(ENRICHED/DONE*100) + "%）· 精校 " + HAND + " · 自动 " + AUTO;
 document.getElementById("p1b").style.width = (ENRICHED/DONE*100) + "%";
@@ -225,6 +284,19 @@ try { OV = JSON.parse(localStorage.getItem(OV_KEY) || "{}"); } catch(e){ OV = {}
 function saveOV(){ try { localStorage.setItem(OV_KEY, JSON.stringify(OV)); } catch(e){} }
 function getOV(vid, li){ return (OV[vid] && OV[vid][li]) || null; }
 
+// 台词视图（剧本 / 气泡 / 纯文本），持久化到 localStorage
+const LV_KEY = "vdr_lineview";
+let LINE_VIEW = "script";
+let CUR_LIST = [], CUR_KW = "";
+try { const v = localStorage.getItem(LV_KEY); if(v==="script"||v==="bubble"||v==="plain") LINE_VIEW = v; } catch(e){}
+function setLineView(v){
+  if(v!=="script"&&v!=="bubble"&&v!=="plain") return;
+  LINE_VIEW = v;
+  try { localStorage.setItem(LV_KEY, v); } catch(e){}
+  document.querySelectorAll("#viewBtns button[data-view]").forEach(b=>b.classList.toggle("on", b.dataset.view===v));
+  render(CUR_LIST, CUR_KW);
+}
+
 function hl(text, kw){
   if(!kw) return esc(text);
   const i = text.toLowerCase().indexOf(kw.toLowerCase());
@@ -247,19 +319,30 @@ function metaItem(k, v){
   return '<div class="meta-item"><div class="k">'+esc(k)+'</div><div class="v">'+v+'</div></div>';
 }
 
-// 台词行：身份配色(文字) + 语气配色(左侧色条+标签)
+// 台词行：按当前视图（剧本/气泡/纯文本）渲染
 function lineHTML(r, li, l, kw){
   const ov = getOV(r.id, li);
   const speaker = (ov && ov.speaker!==undefined) ? ov.speaker : (l.speaker||"");
   const tone    = (ov && ov.tone!==undefined)    ? ov.tone    : (l.tone||"");
   const hier    = (ov && ov.hier) ? ov.hier : hierOf(speaker);
   const tc = toneColor(tone);
-  const pre = [];
-  if(speaker) pre.push('<span class="line-speaker" data-hier="'+hier+'" data-vid="'+r.id+'" data-li="'+li+'">'+hl(speaker,kw)+'</span>');
-  if(tone) pre.push('<span class="line-tone" style="background:'+tc+'" data-vid="'+r.id+'" data-li="'+li+'">'+hl(tone,kw)+'</span>');
-  const sound = (l.sound||[]).map(s=>'<span class="line-sound">'+hl(s,kw)+'</span>').join('');
-  const border = tc ? ' style="border-left-color:'+tc+'"' : '';
-  return '<p class="tline"'+border+'>'+pre.join('')+fmtLine(l.text, kw)+(sound?' '+sound:'')+'</p>';
+  const text = fmtLine(l.text, kw);
+  const sound = (l.sound||[]).map(s=>'<span class="snd">'+hl(s,kw)+'</span>').join(' ');
+  const snd = sound ? ' '+sound : '';
+  const spkAttr = 'data-hier="'+hier+'" data-vid="'+r.id+'" data-li="'+li+'"';
+
+  if(LINE_VIEW==="bubble"){
+    const spk = speaker ? '<div class="spk line-speaker" '+spkAttr+' data-h="'+hier+'">'+hl(speaker,kw)+'</div>' : '';
+    return '<div class="tline" data-h="'+hier+'"><div class="bub">'+spk+'<div class="dia">'+text+snd+'</div></div></div>';
+  }
+  if(LINE_VIEW==="plain"){
+    const spk = speaker ? '<span class="spk line-speaker" '+spkAttr+' data-h="'+hier+'">'+hl(speaker,kw)+'</span>' : '';
+    return '<div class="tline">'+spk+'<span class="dia">'+text+snd+'</span></div>';
+  }
+  // script（默认）
+  const spk = speaker ? '<div class="spk line-speaker" '+spkAttr+' data-h="'+hier+'">'+hl(speaker,kw)+'</div>' : '<div class="spk line-speaker" '+spkAttr+'></div>';
+  const diaStyle = tc ? ' style="border-left-color:'+tc+'"' : '';
+  return '<div class="tline">'+spk+'<div class="dia"'+diaStyle+'>'+text+snd+'</div></div>';
 }
 
 // 篇级分析区（仅富集篇显示）
@@ -285,7 +368,7 @@ function cardHTML(r, kw){
     : (r.tier === "auto"
         ? '<span class="badge auto">⚙ 自动增强（待精校）</span>'
         : '<span class="badge ok">✓ 精校增强</span>');
-  const titleText = r.title_zh || r.title;
+  const titleText = cleanTitle(r.title_zh || r.title);
   const beh = (r.behaviors||[]).map((b,i) =>
     '<li><span class="num">'+String(i+1)+'.</span><span>'+hl(b.desc,kw)+'</span></li>').join("");
   const lines = (r.lines||[]).map((l,i) => lineHTML(r, i, l, kw)).join("");
@@ -299,39 +382,112 @@ function cardHTML(r, kw){
     '<div class="sec"><div class="t">场景</div>'+scene+'</div>'+
     metaHTML(r, kw)+
     '<div class="sec"><div class="t">行为</div><ul class="beh">'+behHTML+'</ul></div>'+
-    '<div class="sec"><div class="t">台词</div><div class="transcript">'+lineHTML2+'</div></div>'+
+    '<div class="sec"><div class="t">台词</div><div class="transcript view-'+LINE_VIEW+'">'+lineHTML2+'</div></div>'+
     enhHint+
     '</section>';
 }
 
 function render(list, kw){
+  CUR_LIST = list; CUR_KW = kw;
   document.getElementById("main").innerHTML = list.map(r=>cardHTML(r,kw)).join("");
   document.getElementById("toc").innerHTML = list.map(r =>
-    '<a href="#v'+r.id+'" data-id="'+r.id+'">'+String(r.no).padStart(3,"0")+'. '+esc(r.title_zh||r.title)+'</a>').join("");
+    '<a href="#v'+r.id+'" data-id="'+r.id+'">'+String(r.no).padStart(3,"0")+'. '+esc(cleanTitle(r.title_zh||r.title))+'</a>').join("");
 }
 
-function search(kw){
-  kw = (kw||"").trim();
-  if(!kw){ render(DATA, ""); return; }
-  const k = kw.toLowerCase();
-  const hit = DATA.filter(r =>
-    (r.title||"").toLowerCase().includes(k) ||
-    (r.title_zh||"").toLowerCase().includes(k) ||
-    (r.scene||"").toLowerCase().includes(k) ||
-    (r.behaviors||[]).some(b => (b.desc||"").toLowerCase().includes(k)) ||
-    (r.lines||[]).some(l => (l.text||"").toLowerCase().includes(k) ||
-        (l.speaker||"").toLowerCase().includes(k) ||
-        (l.tone||"").toLowerCase().includes(k) ||
-        (l.sound||[]).some(s=>s.toLowerCase().includes(k))) ||
-    (r.tone_summary||"").toLowerCase().includes(k) ||
-    (r.genre_tags||[]).some(t=>t.toLowerCase().includes(k)) ||
-    (r.listener_role||"").toLowerCase().includes(k) ||
-    (r.signature_elements||[]).some(t=>t.toLowerCase().includes(k))
+/* ===== A7 同义词归一 + B8 筛选器 ===== */
+const SYNONYMS = {
+  "哥哥": ["兄长","お兄さん","哥","兄"],
+  "主人": ["主","主人公"],
+  "管娇": ["打手心","OTK","巴掌","戒尺","管教","惩戒","spanking"],
+  "调教": ["训练","规训"],
+  "撒娇": ["娇","黏人","黏"],
+  "宠溺": ["溺爱","宠","宠爱"],
+  "温柔": ["温软","安抚","心疼","治愈"],
+  "男友": ["老公","对象","先生"],
+  "老师": ["师父","师傅"],
+  "爸爸": ["爹地","父亲"],
+  "宝宝": ["宝贝","小狗","狗狗"],
+  "命令": ["支配","严厉","叱责"],
+  "请求": ["恳求","哀求"],
+  "询问": ["疑惑","疑问"],
+  "冷淡": ["嘲讽","轻蔑","戏谑"]
+};
+function expandKw(kw){
+  kw = (kw||"").trim().toLowerCase();
+  if(!kw) return [];
+  let arr = [kw];
+  for(const k in SYNONYMS){
+    const kl = k.toLowerCase();
+    if(kw.indexOf(kl)>=0 || SYNONYMS[k].some(s=>kw.indexOf(s.toLowerCase())>=0))
+      arr.push(...SYNONYMS[k].map(s=>s.toLowerCase()));
+  }
+  return [...new Set(arr)];
+}
+function kwHit(r, kws){
+  if(!kws.length) return true;
+  const low = s=>(s||"").toLowerCase();
+  return kws.some(k =>
+    low(cleanTitle(r.title)).indexOf(k)>=0 || low(cleanTitle(r.title_zh)).indexOf(k)>=0 || low(r.scene).indexOf(k)>=0 ||
+    (r.behaviors||[]).some(b=>low(b.desc).indexOf(k)>=0) ||
+    (r.lines||[]).some(l=>low(l.text).indexOf(k)>=0||low(l.speaker).indexOf(k)>=0||low(l.tone).indexOf(k)>=0||(l.sound||[]).some(s=>low(s).indexOf(k)>=0)) ||
+    low(r.tone_summary).indexOf(k)>=0 || (r.genre_tags||[]).some(t=>low(t).indexOf(k)>=0) || low(r.listener_role).indexOf(k)>=0 || (r.signature_elements||[]).some(t=>low(t).indexOf(k)>=0)
   );
+}
+const FILTER = { hier:null, tone:null, genre:null, sensitive:null };
+function filterHit(r){
+  if(FILTER.hier){
+    const sp = (r.lines&&r.lines[0]) ? r.lines[0].speaker : "";
+    if(hierOf(sp)!==FILTER.hier) return false;
+  }
+  if(FILTER.tone){
+    if(!(r.lines||[]).some(l=> (l.tone||"").indexOf(FILTER.tone)>=0)) return false;
+  }
+  if(FILTER.genre){
+    if((r.genre_tags||[]).indexOf(FILTER.genre)<0) return false;
+  }
+  if(FILTER.sensitive==="y" && !r.sensitive) return false;
+  if(FILTER.sensitive==="n" && r.sensitive) return false;
+  return true;
+}
+function search(kw){
+  const kws = expandKw(kw);
+  const hit = DATA.filter(r => kwHit(r, kws) && filterHit(r));
   render(hit, kw);
 }
-
+const FILTER_DEFS = [
+  { dim:"hier", label:"身份", opts:[["sup","上位者"],["sub","下位者"],["other","其他"]] },
+  { dim:"tone", label:"语气", opts:[["命令","命令"],["请求","请求"],["询问","询问"],["温柔","温柔"],["撒娇","撒娇"],["责备","责备"],["宠溺","宠溺"],["平静","平静"]] },
+  { dim:"genre", label:"题材", opts:[["古风","古风"],["校园/师生","校园/师生"],["主仆/调教","主仆/调教"],["职场","职场"],["医疗","医疗"],["家庭/长辈","家庭/长辈"],["现代情侣","现代情侣"],["治愈","治愈"]] },
+  { dim:"sensitive", label:"敏感", opts:[["y","仅敏感"],["n","仅非敏感"]] },
+];
+function renderFilters(){
+  const box = document.getElementById("filters");
+  box.innerHTML = FILTER_DEFS.map(f =>
+    '<span class="fgrp"><b>'+f.label+'：</b>'+
+    '<span class="chip on" data-dim="'+f.dim+'" data-val="">全部</span>'+
+    f.opts.map(o=>'<span class="chip" data-dim="'+f.dim+'" data-val="'+o[0]+'">'+o[1]+'</span>').join("")+
+    '</span>'
+  ).join("");
+  box.querySelectorAll(".chip").forEach(ch=>{
+    ch.addEventListener("click", ()=>{
+      const dim=ch.dataset.dim, val=ch.dataset.val;
+      FILTER[dim] = (FILTER[dim]===val && val!=="") ? null : val;
+      const grp = ch.parentElement;
+      grp.querySelectorAll(".chip").forEach(c=>c.classList.remove("on"));
+      if(!FILTER[dim]){ grp.querySelector('[data-val=""]').classList.add("on"); }
+      else { ch.classList.add("on"); }
+      search(document.getElementById("search").value);
+    });
+  });
+}
 render(DATA, "");
+renderFilters();
+// 初始化台词视图按钮高亮（render 已用当前 LINE_VIEW 渲染）
+document.querySelectorAll("#viewBtns button[data-view]").forEach(b=>b.classList.toggle("on", b.dataset.view===LINE_VIEW));
+document.getElementById("viewBtns").addEventListener("click", e=>{
+  const b = e.target.closest("button[data-view]"); if(!b) return;
+  setLineView(b.dataset.view);
+});
 document.getElementById("search").addEventListener("input", e=>search(e.target.value));
 
 document.getElementById("toc").addEventListener("click", e=>{

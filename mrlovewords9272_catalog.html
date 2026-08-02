@@ -91,9 +91,11 @@
   .summary{font-size:13.5px;color:var(--ink);background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:14px}
   .summary .sep{color:var(--sub);margin:0 5px}
   .transcript{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;max-width:34em}
-  .dline{margin:0;padding:7px 0 7px 14px;border-left:3px solid var(--line);line-height:1.85}
-  .dline .spk{display:block;font-size:calc(13px * var(--rs,1));font-weight:800;margin-bottom:3px;letter-spacing:.02em}
-  .dline .dia{font-size:calc(16px * var(--rs,1));line-height:1.95;color:#0f172a;text-align:justify}
+  /* 台词：分段模式（按说话人归组为段落，而非一句一行） */
+  .dpara{position:relative;margin:11px 0;padding:2px 0 2px 13px;border-left:3px solid var(--line)}
+  .dpara .spk{display:block;font-size:calc(12px * var(--rs,1));font-weight:700;letter-spacing:.02em;margin-bottom:3px}
+  .dpara .diatext{font-size:calc(15.5px * var(--rs,1));line-height:1.95;color:#0f172a;text-align:justify}
+  .dpara .dl{display:inline}
   .line-speaker[data-hier="sup"]{color:#2563eb}
   .line-speaker[data-hier="sub"]{color:#db2777}
   .line-speaker[data-hier="other"]{color:#475569}
@@ -116,8 +118,8 @@
   .editbtn{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 13px;font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap}
   .editbtn:hover{border-color:var(--accent)}
   .editbtn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
-  body.edit .line-speaker{cursor:pointer;outline:1px dashed #cbd5e1;outline-offset:2px}
-  body.edit .line-speaker:hover{filter:brightness(.95)}
+  body.edit .line-speaker,body.edit .dl{cursor:pointer;outline:1px dashed #cbd5e1;outline-offset:2px}
+  body.edit .line-speaker:hover,body.edit .dl:hover{filter:brightness(.95)}
   #ovModal{position:fixed;inset:0;background:rgba(15,23,42,.4);display:none;align-items:center;justify-content:center;z-index:300}
   #ovModal .box{background:#fff;border-radius:14px;padding:20px 22px;width:330px;box-shadow:0 12px 40px rgba(0,0,0,.25)}
   #ovModal h3{margin:0 0 4px;font-size:14px}
@@ -482,15 +484,45 @@ function openDetail(id){
   state.view="detail";
   window.scrollTo(0,0);
 }
-function detailLineHTML(r,i,l,speaker,tone,hier,show,kw){
-  const tc=toneColor(tone);
-  const neutral=tone&&NEUTRAL_TONE.test(tone);
-  const bar=(tc&&!neutral)?' style="border-left-color:'+tc+'"':'';
-  const spkAttr='data-vid="'+esc(r.id)+'" data-li="'+i+'"';
-  const spk=show?'<span class="spk line-speaker" data-hier="'+hier+'" '+spkAttr+'>'+hl(speaker,kw)+'</span>':'';
-  const text=fmtLine(l.text,kw);
-  const snd=(l.sound||[]).map(s=>'<span class="snd">'+hl(s,kw)+'</span>').join(" ");
-  return '<div class="dline">'+spk+'<div class="dia"'+bar+'>'+text+(snd?' '+snd:'')+'</div></div>';
+function lineMeta(r,i){
+  const l=r.lines[i]; if(!l) return null;
+  const ov=getOV(r.id,i);
+  const speaker=(ov&&ov.speaker!==undefined)?ov.speaker:(l.speaker||"");
+  const tone=(ov&&ov.tone!==undefined)?ov.tone:(l.tone||"");
+  const hier=(ov&&ov.hier)?ov.hier:hierOf(speaker);
+  return {l,speaker,tone,hier};
+}
+/* 台词分段模式：按说话人归组为段落（长独白按 ~10 句切分），说话人标签仅出现一次；
+   每行仍是一个 .dl 可点击元素，保留逐句纠错能力。 */
+function detailParasHTML(r,kw){
+  const lines=r.lines||[];
+  if(!lines.length) return '<div class="empty">（无台词）</div>';
+  const CAP=10; let out=""; let i=0;
+  while(i<lines.length){
+    const sp=lineMeta(r,i).speaker;
+    const run=[]; let j=i;
+    while(j<lines.length && lineMeta(r,j).speaker===sp){ run.push(j); j++; }
+    for(let c=0;c<run.length;c+=CAP){
+      const chunk=run.slice(c,c+CAP);
+      const first=chunk[0]; const fm=lineMeta(r,first);
+      const hier=fm.hier;
+      let barColor="";
+      for(const idx of chunk){ const m=lineMeta(r,idx); const tc=toneColor(m.tone); const neutral=m.tone&&NEUTRAL_TONE.test(m.tone); if(tc&&!neutral){ barColor=tc; break; } }
+      const bar=barColor?' style="border-left-color:'+barColor+'"':'';
+      const spk=fm.speaker;
+      const spkSpan=spk?'<span class="spk line-speaker" data-hier="'+hier+'" data-vid="'+esc(r.id)+'" data-li="'+first+'">'+hl(spk,kw)+'</span>':'';
+      let body="";
+      for(const idx of chunk){
+        const m=lineMeta(r,idx);
+        const text=fmtLine(m.l.text,kw);
+        const snd=(m.l.sound||[]).map(s=>'<span class="snd">'+hl(s,kw)+'</span>').join(" ");
+        body+='<span class="dl" data-vid="'+esc(r.id)+'" data-li="'+idx+'">'+text+(snd?' '+snd:'')+'</span> ';
+      }
+      out+='<div class="dpara"'+bar+'>'+spkSpan+'<div class="diatext">'+body+'</div></div>';
+    }
+    i=j;
+  }
+  return out;
 }
 function metaHTML(r,kw){
   if(!r.enriched) return '';
@@ -518,16 +550,7 @@ function renderDetail(r){
   if(r.scene) sp.push(esc(r.scene));
   if(r.emotion_arc) sp.push('情感弧：'+esc(r.emotion_arc));
   const summary = sp.length? sp.join('<span class="sep">·</span>') : '<span class="empty">（无场景描述）</span>';
-  let prev="__NONE__";
-  const lines=(r.lines||[]).map((l,i)=>{
-    const ov=getOV(r.id,i);
-    const speaker=(ov&&ov.speaker!==undefined)?ov.speaker:(l.speaker||"");
-    const tone=(ov&&ov.tone!==undefined)?ov.tone:(l.tone||"");
-    const hier=(ov&&ov.hier)?ov.hier:hierOf(speaker);
-    const show=speaker&&speaker!==prev;
-    prev=speaker||prev;
-    return detailLineHTML(r,i,l,speaker,tone,hier,show,state.kw);
-  }).join("") || '<div class="empty">（无台词）</div>';
+  const lines=detailParasHTML(r,state.kw);
   const meta2=metaHTML(r,state.kw);
   const beh=(r.behaviors||[]).map((b,i)=>'<li><span class="num">'+String(i+1)+'.</span><span>'+hl(b.desc,state.kw)+'</span></li>').join("");
   const behHTML=beh?'<div class="sec"><div class="t">行为节点</div><ul class="beh">'+beh+'</ul></div>':'';
@@ -696,7 +719,7 @@ document.getElementById("ovReset").addEventListener("click",()=>{
 });
 document.addEventListener("click",e=>{
   if(!EDIT) return;
-  const t=e.target.closest(".line-speaker");
+  const t=e.target.closest(".line-speaker,.dl");
   if(!t) return;
   const vid=t.dataset.vid, li=+t.dataset.li;
   const rec=DATA.find(r=>r.id===vid); if(!rec) return;

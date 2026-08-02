@@ -131,7 +131,50 @@
   #ovModal button{cursor:pointer;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600}
   #ovModal .save{background:var(--accent);color:#fff}
   #ovModal .cancel{background:#e5e7eb;color:#374151}
-  @media(max-width:780px){.filters .legend{display:none}.hbtn.txtonly{display:none}}
+  /* ===== 手机端适配（≤780px 严格响应式） ===== */
+  @media(max-width:780px){
+    html{-webkit-text-size-adjust:100%}
+    header{padding:8px 12px}
+    .topbar{flex-wrap:wrap;gap:8px;align-items:center}
+    .brand{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}
+    .search{order:3;flex:1 1 100%;font-size:16px;padding:10px 14px;margin-top:2px}
+    .hbtns{order:2;flex-wrap:wrap;justify-content:flex-end;gap:6px}
+    .hbtn{padding:6px 10px;font-size:12px}
+    .readbtns button{padding:5px 8px;font-size:11px}
+    /* 筛选：由横向滚动改为可换行，不再被截断 */
+    .filters{overflow:visible;flex-wrap:wrap;gap:8px 10px;margin-top:8px;padding-bottom:0}
+    .fgrp{flex-wrap:wrap}
+    .chip{padding:5px 11px;font-size:12px}
+    /* 网格：手机固定 2 列，更紧凑 */
+    .wrap{padding:12px}
+    .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .gcard-body{padding:8px 9px 10px}
+    .gtitle{font-size:13px}
+    .gsub{font-size:10.5px}
+    .gridbar{margin:2px 0 10px}
+    .sortbtns button{padding:4px 10px;font-size:11px}
+    .cnt{font-size:12px}
+    /* 详情 */
+    #detailView{padding:14px 13px 56px}
+    .dtitle{font-size:18px}
+    .dsub{font-size:12px}
+    .transcript{padding:12px;max-width:none}
+    .meta-grid{grid-template-columns:1fr}
+    .sec .t{font-size:11px}
+    .summary{font-size:13px}
+    /* 弹窗：宽度受限于视口，内容超高可滚动，操作钮吸底 */
+    #ovModal .box{width:min(340px,92vw);padding:18px 16px;max-height:88vh;overflow:auto}
+    #ovModal .acts{position:sticky;bottom:0;background:#fff;padding-top:12px;margin-top:14px}
+    .pager{margin:18px 0 8px}
+    .pager button{padding:9px 16px;font-size:14px}
+    .pager .pginfo{font-size:13px}
+    .dashcols{grid-template-columns:1fr;gap:12px}
+  }
+  @media(max-width:380px){
+    .grid{gap:8px}
+    .brand{font-size:13px}
+    .hbtn{padding:5px 8px;font-size:11px}
+  }
 </style>
 </head>
 <body>

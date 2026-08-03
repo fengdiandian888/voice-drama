@@ -83,6 +83,7 @@ for i, x in enumerate(vids, 1):
             "signature_elements": e.get("signature_elements", []),
             "sensitive": bool(e.get("sensitive", False)),
             "tier": e.get("tier", "hand"),
+            "story": e.get("story", []),
         }
     else:
         lines = [{"ts": l[0], "text": l[1], "speaker": "", "tone": "", "sound": []}
@@ -233,6 +234,13 @@ HTML = """<!DOCTYPE html>
   .dpara .spk{display:block;font-size:calc(12px * var(--rs,1));font-weight:700;letter-spacing:.02em;margin-bottom:3px}
   .dpara .diatext{font-size:calc(15.5px * var(--rs,1));line-height:1.95;color:#0f172a;text-align:justify}
   .dpara .dl{display:inline}
+  /* 剧本体：叙述 + 彩色台词 */
+  .story{font-size:calc(15.5px * var(--rs,1));line-height:2;color:#334155;text-align:justify}
+  .story .sn{display:block;margin:10px 0 6px;color:#475569;text-indent:2em}
+  .story .sl{margin:5px 0;padding-left:2em;text-indent:-2em}
+  .story .sl .spk{display:inline;font-weight:700;margin-right:6px;white-space:nowrap}
+  .story .st{font-weight:600}
+  .story .snd{color:#94a3b8;font-size:.85em}
   .line-speaker[data-hier="sup"]{color:#2563eb}
   .line-speaker[data-hier="sub"]{color:#db2777}
   .line-speaker[data-hier="other"]{color:#475569}
@@ -432,6 +440,7 @@ function hierOf(name){
   if(HIER[name]==="sub") return "sub";
   return "other";
 }
+function hierColor(h){ if(h==="sup") return "#2563eb"; if(h==="sub") return "#db2777"; return "#64748b"; }
 const TONE_COLOR = {
   "命令":"#dc2626","支配":"#dc2626","严厉":"#dc2626","叱":"#dc2626",
   "请求":"#ea580c","恳求":"#ea580c","哀求":"#ea580c",
@@ -629,6 +638,26 @@ function lineMeta(r,i){
   const hier=(ov&&ov.hier)?ov.hier:hierOf(speaker);
   return {l,speaker,tone,hier};
 }
+/* 剧本体渲染：story 数组 [{type:narr|line,text,speaker?}]，叙述灰色、台词按说话人层级着色 */
+function storyHTML(r,kw){
+  const st=r.story||[];
+  if(!st.length) return '';
+  let out="";
+  for(let i=0;i<st.length;i++){
+    const s=st[i]; if(!s||!s.text) continue;
+    if(s.type==="narr"){
+      out+='<span class="sn">'+hl(s.text,kw)+'</span>';
+    }else{
+      const spk=s.speaker||"";
+      const hier=spk?hierOf(spk):"other";
+      const color=spk?hierColor(hier):"";
+      const spkSpan=spk?'<span class="spk" data-hier="'+hier+'" style="color:'+color+'">'+hl(spk,kw)+'：</span>':'';
+      const toneCls=s.tone&&!NEUTRAL_TONE.test(s.tone)&&toneColor(s.tone)?' style="color:'+toneColor(s.tone)+'"':'';
+      out+='<span class="sl"><span class="st"'+toneCls+'>'+spkSpan+hl(s.text,kw)+'</span></span>';
+    }
+  }
+  return '<div class="story">'+out+'</div>';
+}
 /* 台词分段模式：按说话人归组为段落（长独白按 ~10 句切分），说话人标签仅出现一次；
    每行仍是一个 .dl 可点击元素，保留逐句纠错能力。 */
 function detailParasHTML(r,kw){
@@ -687,7 +716,8 @@ function renderDetail(r){
   if(r.scene) sp.push(esc(r.scene));
   if(r.emotion_arc) sp.push('情感弧：'+esc(r.emotion_arc));
   const summary = sp.length? sp.join('<span class="sep">·</span>') : '<span class="empty">（无场景描述）</span>';
-  const lines=detailParasHTML(r,state.kw);
+  const lines=(r.story&&r.story.length)?storyHTML(r,state.kw):detailParasHTML(r,state.kw);
+  const linesSec=r.story&&r.story.length?'台词（剧本体 · 彩色为台词）':'台词（剧本视图）';
   const meta2=metaHTML(r,state.kw);
   const beh=(r.behaviors||[]).map((b,i)=>'<li><span class="num">'+String(i+1)+'.</span><span>'+hl(b.desc,state.kw)+'</span></li>').join("");
   const behHTML=beh?'<div class="sec"><div class="t">行为节点</div><ul class="beh">'+beh+'</ul></div>':'';
@@ -697,7 +727,7 @@ function renderDetail(r){
     (tt.sub?'<div class="dsub">'+hl(tt.sub,state.kw)+'</div>':'')+
     '<div class="dmetarow">'+badge+' '+chips+' '+meta+'</div>'+
     '<div class="summary">'+summary+'</div>'+
-    '<div class="sec"><div class="t">台词（剧本视图）</div><div class="transcript">'+lines+'</div></div>'+
+    '<div class="sec"><div class="t">'+linesSec+'</div><div class="transcript">'+lines+'</div></div>'+
     meta2+behHTML+enhHint;
   document.getElementById("detailView").innerHTML=html;
 }

@@ -75,7 +75,31 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": true
+  "speaker_confident": true,
+  "story": [
+   {
+    "type": "narr",
+    "text": "他放下手机，看着她躲闪的眼睛，语气带着失望的沉。她低下头，手指绞在一起。"
+   },
+   {
+    "type": "line",
+    "speaker": "哥哥",
+    "text": "你明明知道，哥哥最讨厌你用撒谎来骗我。为什么还要这么做？自己说，错在哪。"
+   },
+   {
+    "type": "narr",
+    "text": "她声音发颤，一字一字说出自己的错。他点了点头，语气没有半分松动。"
+   },
+   {
+    "type": "line",
+    "speaker": "哥哥",
+    "text": "记好数。三十下，一下都不会少。让你长记性，看你还敢不敢说谎。"
+   },
+   {
+    "type": "narr",
+    "text": "她咬着唇趴好，数到三十下时，声音已经抖得不成样子。他放下手，把人捞进怀里，语气终于软下来。这一顿打，是为了让她记住，有些谎，一次都不能撒。"
+   }
+  ]
  },
  {
   "id": "3HVPSmSMgSg",
@@ -117,7 +141,22 @@
   ],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "他坐在沙发上，看着那个裹着毯子、虚弱兮兮的人，语气带着看穿一切的了然。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "本事见长啊，都学会装病逃避惩罚了。今天我倒要看看，你能装到什么时候。"
+   },
+   {
+    "type": "narr",
+    "text": "她缩了缩脖子，把脸埋进毯子里。他走过去，居高临下地看着她，慢悠悠地补充了一句。这一天的账，看来是怎么也躲不掉了。"
+   }
+  ]
  },
  {
   "id": "LHv8uFiWMaQ",
@@ -185,7 +224,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "书房里，他坐在桌后处理文件，她跪在旁边，姿态端正。他抬眼看了看她，语气带着满意的温和。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "对，就这样。跪好，别动。这才是你该有的样子。陪我工作的时候，就保持这个姿势。懂了吗？敢偷懒的话，自己说，该罚几下？"
+   },
+   {
+    "type": "narr",
+    "text": "她小声报了个数。他挑眉，没有接话，只是低头继续看文件，嘴角却轻轻翘了一下。这样的夜晚，安静又温驯。"
+   }
+  ]
  },
  {
   "id": "fyeDrBS7aXo",
@@ -260,7 +314,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她怯生生地抬起头，看着他的眼睛，轻声问了一句。他看着她，沉默了一瞬，随即轻轻笑了。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "你愿意，再试一次吗？你确实挺聪明的，知道怎么说，才能让我心软。去那边跪好。敢乱动的话，今天就不止打手心了。"
+   },
+   {
+    "type": "narr",
+    "text": "她乖乖走到墙角跪好，把手心摊开。他走过去，低头看着她认真的样子，眼底终于有了温度。这一次，她会好好记住。"
+   }
+  ]
  },
  {
   "id": "Tmv7schO4VU",
@@ -373,6 +442,30 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她靠在他怀里，抽抽噎噎，眼泪怎么都止不住。他一下一下拍着她的背，语气放得很软。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "好了好了，不哭了。不哭了。这件事过去了。来，来。过来。我看看你的手。看起来倒是没什么事。"
+   },
+   {
+    "type": "narr",
+    "text": "她吸着鼻子，声音闷闷地开口。他看着她，摇了摇头，语气带着无奈的心疼。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "对不起，我是不是又让你担心了？没什么好对不起的。不过下次不要再这样了，知不知道？"
+   },
+   {
+    "type": "narr",
+    "text": "她在他怀里点头，眼泪终于慢慢止住。他低头，在她发顶落下一个吻。有些担心，说破了，也就过去了。"
+   }
+  ]
  }
 ]

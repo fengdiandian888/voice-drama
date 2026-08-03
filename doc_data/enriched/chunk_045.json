@@ -79,7 +79,31 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "夜深了，她却还在床上翻来覆去，闹着不肯睡。他坐起身，语气带着危险的耐心。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "今晚你不想安安分分睡觉，那我就好好陪你玩一玩。跪到墙边去，手撑在墙上。没有我的允许，不准回头，不准动。"
+   },
+   {
+    "type": "narr",
+    "text": "她照做，跪在墙边，手撑着墙，一动不敢动。他靠在床头，慢悠悠地开口。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "什么时候学会听话了，什么时候再下来。"
+   },
+   {
+    "type": "narr",
+    "text": "夜越来越静，她的膝盖渐渐发酸，却不敢动一下。直到他走到她身后，声音带着笑意——好了，今晚的觉，该好好睡了。"
+   }
+  ]
  },
  {
   "id": "5SyRXlQTdO0",
@@ -133,7 +157,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她低着头站在他面前，小声认错。他看着她，叹了口气，语气带着又气又无奈的心疼。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "我知道错了。又是知道错了。这次能乖几天？真是拿你没办法。"
+   },
+   {
+    "type": "narr",
+    "text": "她抬起头，眼睛红红的，小声说，会一直乖。他看着她这副模样，终究心软，伸手揉了揉她的头发。"
+   }
+  ]
  },
  {
   "id": "jjQKDF5uWXM",
@@ -232,7 +271,31 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她挣扎着要往外跑，被他一把拉住。她回过头，红着眼眶，气呼呼地喊着。他没有松手，声音平静却不容抗拒。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "放开我！我现在不喜欢你了。你放开我！安静。我不喜欢你了，听到没有！你放开我。安静。过来。我说了，安静。过来，我们好好谈。"
+   },
+   {
+    "type": "narr",
+    "text": "她挣扎的动作慢慢停下来，眼泪却掉了下来。他伸手，轻轻替她擦掉，语气软下来。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "好好的，为什么要离家出走？有什么话，不能坐下来好好说？"
+   },
+   {
+    "type": "narr",
+    "text": "她靠进他怀里，闷闷地说出委屈。他听着，一下一下拍着她的背。有些话，说开了，心结也就解了。"
+   }
+  ]
  },
  {
   "id": "laixEmQ4MuI",
@@ -373,7 +436,66 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "夜色渐沉，他倚在车边，目光落在你身上，语气里压着一丝不悦。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "行啊你，旷课去游乐场？"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "玩什么了？过山车？"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "还有呢？"
+   },
+   {
+    "type": "narr",
+    "text": "你低着头，小声嘟囔，只敢承认玩了过山车。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "就只玩过山车，还玩了五圈？"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "为什么要旷课？挺刺激的？"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "我问你为什么要旷课，就为了刺激是吧？"
+   },
+   {
+    "type": "narr",
+    "text": "他声音沉下来，直起身，居高临下地看着你，不怒自威。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "站起来。这才刚开始。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "找到车，才能带你回去。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "要是迷路了，你今晚可就回不了家了。"
+   }
+  ]
  },
  {
   "id": "SRGE9Tf2RUk",
@@ -406,6 +528,21 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "夜很深，她蜷在被子里，怎么也睡不着。他察觉到她的动静，轻轻把人揽进怀里，声音带着睡意却格外温柔。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "乖，躺好。今晚我陪着你，哪儿也不去。"
+   },
+   {
+    "type": "narr",
+    "text": "她靠在他胸口，听着他一下一下的心跳，终于慢慢合上眼睛。有他在，夜再长也不怕。"
+   }
+  ]
  }
 ]

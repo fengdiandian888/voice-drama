@@ -68,7 +68,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "他站在门口，声音不高不低地唤了一声。她坐在沙发上没动，假装没听见。他走过去，语气沉了一分。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "过来。我说过来。今天怎么这么不听话？很喜欢试探我的底线，是吧？我不想把一句话重复第三遍。你自己掂量着办吧。"
+   },
+   {
+    "type": "narr",
+    "text": "她终于站起身，磨磨蹭蹭地走到他面前。他低头看她，语气缓和了些，却依然不容违抗。有些底线，碰一次就够记住一辈子。"
+   }
+  ]
  },
  {
   "id": "Gxtj2Ux6bMg",
@@ -216,7 +231,65 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "他沉着脸看着你，语气里带着压抑的失望。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "说了多少次了，怎么就是记不住？"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "站好了。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "是我说话不好使了，是吧？"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "转过去。别想耍嘴硬。"
+   },
+   {
+    "type": "narr",
+    "text": "你眼眶发红，咬着嘴唇不敢吭声，肩膀轻轻发抖。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "可以哭出来，但记住，你没有拒绝的权力。"
+   },
+   {
+    "type": "narr",
+    "text": "空气安静了几秒，他忽然叹了口气，语气软了下来。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "好了好了，是我的错，以后不这样了。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "不说这些了，乖。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "不哭了，不哭了好不好？"
+   },
+   {
+    "type": "narr",
+    "text": "他伸手把你揽进怀里，掌心轻轻拍着你的背，一下，又一下，像哄小孩。"
+   }
+  ]
  },
  {
   "id": "PjoA7bC7yyc",
@@ -318,7 +391,31 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她红着眼眶，眼泪啪嗒啪嗒往下掉。他看着她，语气先软了一分，却没有退让。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "如果是我惹你生气了，我怎么都会哄你。但这次是原则问题。一而再再而三地犯错，还哭？给我憋回去。再哭，我可要开始罚了。"
+   },
+   {
+    "type": "narr",
+    "text": "她抽噎着，眼泪却怎么也止不住。他看着她，终究叹了口气，伸出手。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "还哭是吧？过来。抱抱就不哭了。"
+   },
+   {
+    "type": "narr",
+    "text": "她扑进他怀里，把脸埋进他胸口。他一下一下拍着她的背，语气彻底软下来。原则是原则，可她的眼泪，永远是他的软肋。"
+   }
+  ]
  },
  {
   "id": "ZRax5_nSMMY",
@@ -403,7 +500,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她别过头，赌气不说话。他挑了挑眉，语气带着玩味。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "哦？这时候跟我赌气呢？不说话是吧？好。很好。我倒要看看，是你的嘴硬，还是我手里的鞭子硬。"
+   },
+   {
+    "type": "narr",
+    "text": "她咬了咬唇，还是不肯低头。他放下鞭子，走过去，俯身看着她，声音低下来。那一瞬，她终于还是先移开了视线。"
+   }
+  ]
  },
  {
   "id": "Y0Nfhu1-zak",
@@ -502,6 +614,30 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "门被推开，她站在门口，风尘仆仆。他坐在沙发上，看着她，语气平静得反常，却藏着这些天压着的情绪。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "你终于肯回来了。放松点。这一路辛苦了。不错，还知道好好打扮自己。真的不一样了。"
+   },
+   {
+    "type": "narr",
+    "text": "她低下头，不敢看他。他站起身，走到她面前，声音低下来，带着这些天的后怕。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "你知道吗，找不到你的那几天，我有多担心。"
+   },
+   {
+    "type": "narr",
+    "text": "她终于抬起头，眼眶红了。他伸手，把人拉进怀里，抱得很紧很紧。这一趟离家出走，让两个人都明白了一件事——家，永远是回得来的地方。"
+   }
+  ]
  }
 ]

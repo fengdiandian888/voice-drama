@@ -51,7 +51,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她叉着腰，难得硬气地和他顶嘴。他愣了一下，随即挑了挑眉，语气带着危险的玩味。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "小东西啊！真是长本事了。现在都敢反抗到我头上来了？怎么，不服？"
+   },
+   {
+    "type": "narr",
+    "text": "她气势肉眼可见地矮了下去，却还嘴硬地哼了一声。他笑了，慢条斯理地挽起袖子。今晚，怕是要好好教教她规矩了。"
+   }
+  ]
  },
  {
   "id": "QLhWcLnOTGk",
@@ -170,7 +185,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "安静的空间里，两个人面对面坐着。她攥着裙角，手心微微出汗。他看着她，语气温和，先让她放松。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "很紧张吗？先喝口水吧。是因为见我，才特意穿裙子来的吗？为了方便。但是我忘记提醒你了，应该穿裤子的。被裙子包裹着，我有种不一样的感觉。现在准备好了吗？那我们，开始。"
+   },
+   {
+    "type": "narr",
+    "text": "她轻轻点头。他站起身，走到她面前，目光沉静而认真。第一次实践，从这一刻真正开始。"
+   }
+  ]
  },
  {
   "id": "FbgGPR3w3aw",
@@ -283,7 +313,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": true
+  "speaker_confident": true,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她趴好，声音带着哭腔求他轻一点。他语气不变，却把道理说得很清楚。"
+   },
+   {
+    "type": "line",
+    "speaker": "主人",
+    "text": "可以求饶，但是不准拒绝主人。为什么？因为求饶的话，免罚就是主人赏你的。而拒绝——你没有这个权力。只会被打得更狠。趴好。一下，两下。继续数，不准停。"
+   },
+   {
+    "type": "narr",
+    "text": "她带着哭腔，一声一声地数着。他听着她越来越抖的声音，手里的力道却始终没有乱。求饶是撒娇，拒绝是违抗——这个分寸，她今天终于记住了。"
+   }
+  ]
  },
  {
   "id": "-SSkrULlBGE",
@@ -323,7 +368,22 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "她摔坐在地上，膝盖擦破了皮，怎么都站不起来。他站在几步外，没有伸手，声音淡淡的。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "既然自己站不起来了，那就爬过来。爬到我脚边，我就原谅你。"
+   },
+   {
+    "type": "narr",
+    "text": "她咬着唇，犹豫了一瞬，还是慢慢爬过去，停在他脚边，仰起头。他低头看她，眼底终于有了温度，伸手把人拉起来。"
+   }
+  ]
  },
  {
   "id": "21TzApFUZkU",
@@ -356,6 +416,21 @@
   "signature_elements": [],
   "sensitive": false,
   "tier": "auto",
-  "speaker_confident": false
+  "speaker_confident": false,
+  "story": [
+   {
+    "type": "narr",
+    "text": "房间里安静下来，他的声音不高，却让她整个人一僵。她站在原地，犹豫了一瞬，还是慢慢走过去，趴好。"
+   },
+   {
+    "type": "line",
+    "speaker": "他",
+    "text": "过来，趴好。今天这顿罚，躲不掉的。"
+   },
+   {
+    "type": "narr",
+    "text": "她抿着唇没有说话，指尖却抓紧了床沿。该来的，终究躲不掉。"
+   }
+  ]
  }
 ]

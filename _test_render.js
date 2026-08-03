@@ -58,17 +58,15 @@ const dashG = els['dashGenres'].innerHTML || '';
 assert(dashG.length > 0 && dashG.includes('古风'), '数据总览·题材已生成(含古风)');
 assert((els['dashHier'].innerHTML||'').includes('全库身份格局'), '身份格局汇总已生成');
 
-console.log('[2] 打开详情视图（首篇）');
+console.log('[2] 打开详情视图（首篇，剧本体）');
 vm.runInContext('openDetail(DATA[0].id)', sandbox);
 const det = els['detailView'].innerHTML || '';
 assert(det.length > 500, 'detailView 有内容 (len=' + det.length + ')');
 assert(det.includes('dtitle'), '详情含标题 .dtitle');
 assert(det.includes('transcript'), '详情含台词区 .transcript');
 assert(det.includes('返回总册'), '详情含返回按钮');
-const spkCount = (det.match(/class="spk line-speaker"/g) || []).length;
-const paraCount = (det.match(/class="dpara"/g) || []).length;
-assert(paraCount > 0, '分段台词已生成 ('+paraCount+' 段)');
-assert(spkCount <= paraCount, '说话人药丸数('+spkCount+') <= 段落数('+paraCount+')');
+const storyCount = (det.match(/class="story"/g) || []).length;
+assert(storyCount > 0, '剧本体容器已生成 ('+storyCount+')');
 
 console.log('[3] 题材筛选（古风）');
 vm.runInContext('state.filters.genre="古风"; state.page=1; renderGrid();', sandbox);
@@ -95,8 +93,8 @@ assert(dvS.includes('class="sl"'), '台词段 .sl 存在');
 assert(dvS.includes('主人：'), '彩色说话人标签“主人：”存在');
 assert(dvS.includes('剧本体'), '分节标题标注剧本体');
 
-console.log('[7] 无 story 篇目回退（A puppy kept in a hotel / 精校层）');
-vm.runInContext('state.selectedId="y1LPRK97wMI"; renderDetail(DATA.find(r=>r.id==="y1LPRK97wMI"));', sandbox);
+console.log('[7] 无 story 篇目回退（extra 基础版）');
+vm.runInContext('state.selectedId="5IrMl5U2N_c"; renderDetail(DATA.find(r=>r.id==="5IrMl5U2N_c"));', sandbox);
 const dvB = els['detailView'].innerHTML || '';
 assert(dvB.includes('class="dpara"'), '回退到分段台词 .dpara');
 assert(!dvB.includes('class="story"'), '无 story 容器');
